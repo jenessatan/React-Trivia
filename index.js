@@ -42,13 +42,18 @@ inputField.addEventListener('keyup', (e) => {
 let addNewRow = (msg) => {
   let row = table.insertRow(-1);
   let msgCell = row.insertCell(0);
+  msgCell.className = 'msg-cell';
   msgCell.innerHTML = msg.message;
   let delCell = row.insertCell(1);
+  delCell.className = 'del-cell';
   let delBtn = document.createElement('button');
   delBtn.className = 'btn-del';
   delBtn.onclick = () => {
-    deleteRow(delBtn);
+    deleteRow();
   };
+  let delIcon = document.createElement('i');
+  delIcon.className = 'fas fa-times';
+  delBtn.appendChild(delIcon);
   delCell.appendChild(delBtn);
 }
 
@@ -67,7 +72,7 @@ let saveMsg = () => {
 
 // onclick function to delete row in table
 let deleteRow = () => {
-  let td = event.target.parentElement;
+  let td = event.target.tagName === 'I'? event.target.parentElement.parentElement : event.target.parentElement;
   let tr = td.parentElement;
   tr.parentElement.removeChild(tr);
 }

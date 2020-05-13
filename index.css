@@ -102,3 +102,23 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.msg-cell {
+  width: 95%
+}
+
+.del-cell {
+  width: 5%
+}
+
+.btn-del {
+  background-color: rgb(184, 0, 0);
+  border: none;
+  color: white;
+  padding: 0.9em 1.2em;
+  font-size: 0.6em;
+}
+
+.btn-del:hover {
+  background-color: rgb(110, 0, 0);
+}
