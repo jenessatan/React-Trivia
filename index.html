@@ -21,16 +21,19 @@
         </div>
       </div>
     </header>
+    <div class="messages" id="title">
+      <h1>BARKER</h1>
+    </div>
     <div class="messages" id='add-messages'>
         <label for="userInput">Message:</label><br>
         <input type="text" id="userInput" name="userInput">
-        <button onclick="saveMsg();">Save</button>
+        <button onclick="saveMsg();" id='btn-save'>Save</button>
     </div>
     <div class="messages" id="all-messages">
       <table id='message-table'>
         <tr>
           <th>Message</th>
-          <!-- <th>Date</th> -->
+          <th></th>
         </tr>
       </table>
     </div>

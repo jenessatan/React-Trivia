@@ -71,16 +71,24 @@ html, body {
 .messages {
   width: 50%;
   margin: 0 auto;
-  padding: 3em
+  padding: 1.5em
 }
 
 #userInput {
   width: 90%
 }
 
+#title {
+  text-align: center;
+}
+
+#title h1 {
+  font-size: 3em;
+  margin: 0
+}
+
 /* TODO: fix this styling for actual table elements!! */
 table {
-  font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
