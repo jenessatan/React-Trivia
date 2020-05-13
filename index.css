@@ -75,7 +75,7 @@ html, body {
 }
 
 #userInput {
-  width: 90%
+  width: 94%
 }
 
 #title {
@@ -87,10 +87,22 @@ html, body {
   margin: 0
 }
 
+.showing {
+  opacity: 1;
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: transform 350ms ease 0ms, opacity 400ms ease;
+}
+
 /* TODO: fix this styling for actual table elements!! */
 table {
   border-collapse: collapse;
   width: 100%;
+  display: block;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 350ms ease 0ms, opacity 400ms ease;
 }
 
 td, th {
@@ -121,4 +133,66 @@ tr:nth-child(even) {
 
 .btn-del:hover {
   background-color: rgb(110, 0, 0);
+}
+
+#all-messages-control {
+  margin-bottom: 0;
+  padding-bottom: 0
+}
+
+#show-all {
+  background-color:#599bb3;
+	border-radius:1.6em;
+	border:0.06em solid #29668f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+  /* font-family: "Montserrat", sans-serif; */
+	font-size: 0.8em;
+	padding: 0.6em 1em;
+	text-decoration:none;
+  text-shadow:0em 0.06em 0em #3d768a;
+  outline: none;
+}
+
+#show-all:hover {
+  background-color:#408c99;
+}
+
+#hide-all {
+  background-color:#fc8d83;
+	border-radius:1.6em;
+	border:0.06em solid #d83526;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+  /* font-family: "Montserrat", sans-serif; */
+	font-size: 0.8em;
+	padding: 0.6em 1em;
+	text-decoration:none;
+  text-shadow:0em 0.06em 0em #b23e35;
+  outline: none;
+}
+
+#hide-all:hover {
+  background-color:#e4685d;
+}
+
+#btn-save {
+  background-color:#74ad5a;
+	border-radius:1.6em;
+	border:0.06em solid #3b6e22;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+  /* font-family: "Montserrat", sans-serif; */
+	font-size: 0.65em;
+	padding: 0.5em 0.9em;
+	text-decoration:none;
+  text-shadow:0em 0.06em 0em #92b879;
+  outline: none;
+}
+
+#btn-save:hover {
+  background-color:#68a54b;
 }

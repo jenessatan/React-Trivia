@@ -29,10 +29,14 @@
         <input type="text" id="userInput" name="userInput">
         <button onclick="saveMsg();" id='btn-save'>Save</button>
     </div>
+    <div class="messages" id="all-messages-control">
+      <button id="show-all" onclick="showAllMsg();">Show all</button>
+      <button id="hide-all" onclick="hideAllMsg();">Hide all</button>
+    </div>
     <div class="messages" id="all-messages">
-      <table id='message-table'>
+      <table id="message-table" class="showing">
         <tr>
-          <th class="msg-cell">Message</th>
+          <th class="msg-cell">Messages</th>
           <th class="del-cell"></th>
         </tr>
       </table>
