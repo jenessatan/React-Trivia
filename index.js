@@ -77,3 +77,13 @@ let deleteRow = () => {
   tr.parentElement.removeChild(tr);
 }
 
+// onclick function to show message table
+let showAllMsg = () => {
+  document.getElementById('message-table').classList.add('showing')
+  console.log(document.getElementById('message-table').classList);
+}
+
+// onclick function to hide message table
+let hideAllMsg = () => {
+  document.getElementById('message-table').classList.remove('showing');
+}
