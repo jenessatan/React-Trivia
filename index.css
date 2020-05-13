@@ -67,3 +67,25 @@ html, body {
       display: block;
   }
 }
+
+.messages {
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* TODO: fix this styling for actual table elements!! */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
