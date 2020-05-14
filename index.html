@@ -4,7 +4,8 @@
       <meta charset='UTF-8'>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>Home Page</title>
-      <link rel="stylesheet" href="index.css">
+      <link rel="stylesheet" href="css/index.css">
+      <link rel="stylesheet" href="css/homepage.css">
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
 
@@ -17,17 +18,18 @@
         </a>
         <div class="right">
           <a href="index.html" class="link">Home</a>
+          <h1 id="title">BARKER</h1>
           <a href="about.html" class="link">About</a>
         </div>
       </div>
     </header>
-    <div class="messages" id="title">
+    <!-- <div class="messages" id="title">
       <h1>BARKER</h1>
-    </div>
+    </div> -->
     <div class="messages" id="add-messages">
       <div>
         <label for="userInput" id="input-label">Message:</label><br>
-        <input type="text" id="userInput" name="userInput">
+        <input type="text" id="userInput" name="userInput" required>
       </div>
       <div id="text-input">
         <button onclick="clearMsg();" id='btn-clear'>Clear</button>
@@ -46,7 +48,10 @@
         </tr>
       </table>
     </div>
+    <!-- <div id="puppy-img">
+      <img src="background.jpg" alt="puppy">
+    </div> -->
   </body>
-  <script type="text/javascript" src="index.js"></script>
-  <script type="text/javascript" src="responsive.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/responsive.js"></script>
 </html>

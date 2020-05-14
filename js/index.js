@@ -64,9 +64,11 @@ loadedMsgs.forEach(addNewRow);
 // onclick function to add user provided message to list
 let saveMsg = () => {
   let inputValue = inputField.value;
-  addNewRow({message: inputValue});
-  document.getElementById('userInput').value = "";
-  document.getElementById('btn-clear').style.display = 'none';
+  if(inputValue !== '') {
+    addNewRow({message: inputValue});
+    document.getElementById('userInput').value = "";
+    document.getElementById('btn-clear').style.display = 'none';
+  }
 }
 
 // onclick function to clear input box
