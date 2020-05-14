@@ -15,3 +15,9 @@ Extra functionality
 - ~~animation when hiding and showing message list~~
 - ~~clear text input button only shows when there is text in the input box~~
 - ~~navigation items are hidden in the menu icon when scaled below a certain size~~
+
+TODO:
+- fix header in collapsed menu
+- About page 
+- more styling?
+- more functionality?
