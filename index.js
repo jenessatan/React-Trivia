@@ -21,22 +21,20 @@ const data = `[
   }
 ]`;
 
-const navHamburger = document.getElementById('navHamburger');
 const table = document.getElementById('message-table');
 const inputField = document.getElementById('userInput');
 
-// register event listener on menu div for activating dropdown menu
-navHamburger.addEventListener('click', (e) => {
-    navHamburger.parentElement.classList.toggle('active');
-})
-
-// register event listener on input box to trigger click on enter
+// register event listener on input box to trigger click on enter & toggle clear button visibility
 inputField.addEventListener('keyup', (e) => {
   if(e.keyCode === 13) {
     e.preventDefault();
     document.getElementById('btn-save').click();
+  } else if(inputField.value === '') {
+    document.getElementById('btn-clear').style.display = 'none';
+  } else {
+    document.getElementById('btn-clear').style.display = 'inline-block';
   }
-})
+});
 
 // helper function to add new row to table
 let addNewRow = (msg) => {
@@ -68,6 +66,13 @@ let saveMsg = () => {
   let inputValue = inputField.value;
   addNewRow({message: inputValue});
   document.getElementById('userInput').value = "";
+  document.getElementById('btn-clear').style.display = 'none';
+}
+
+// onclick function to clear input box
+let clearMsg = () => {
+  document.getElementById('userInput').value = "";
+  document.getElementById('btn-clear').style.display = 'none';
 }
 
 // onclick function to delete row in table
@@ -77,13 +82,22 @@ let deleteRow = () => {
   tr.parentElement.removeChild(tr);
 }
 
+// onclick function to delete all message rows in table
+let clearAllMsgs = () => {
+  document.getElementById('message-table').innerHTML = `<tr>
+    <th class="msg-cell">Messages</th>
+    <th class="del-cell"><button onclick="clearAllMsgs();" id="btn-clear-all">Clear all</button></th>
+  </tr>`
+}
+
 // onclick function to show message table
 let showAllMsg = () => {
-  document.getElementById('message-table').classList.add('showing')
-  console.log(document.getElementById('message-table').classList);
+  document.getElementById('all-messages').classList.add('showing');
+  document.getElementById('all-messages').classList.remove('hiding');
 }
 
 // onclick function to hide message table
 let hideAllMsg = () => {
-  document.getElementById('message-table').classList.remove('showing');
+  document.getElementById('all-messages').classList.add('hiding');
+  document.getElementById('all-messages').classList.remove('showing');
 }

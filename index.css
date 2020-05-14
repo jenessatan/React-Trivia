@@ -75,7 +75,9 @@ html, body {
 }
 
 #userInput {
-  width: 94%
+  width: 99%;
+  padding: 0.5em 0;
+  font-size: 0.85em
 }
 
 #title {
@@ -94,45 +96,62 @@ html, body {
   transition: transform 350ms ease 0ms, opacity 400ms ease;
 }
 
-/* TODO: fix this styling for actual table elements!! */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  display: block;
+.hiding {
   opacity: 0;
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 350ms ease 0ms, opacity 400ms ease;
 }
 
+/* TODO: fix this styling for actual table elements!! */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  display: block;
+}
+
 td, th {
-  border: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #e2e2e2af;
+}
+
+th.msg-cell{
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: bolder;
 }
 
 .msg-cell {
-  width: 95%
+  width: 93%
 }
 
 .del-cell {
-  width: 5%
+  width: 7%;
+  text-align: center;
 }
 
-.btn-del {
-  background-color: rgb(184, 0, 0);
+#btn-clear-all {
+    background-color: rgb(151, 0, 0);
   border: none;
   color: white;
   padding: 0.9em 1.2em;
   font-size: 0.6em;
 }
 
-.btn-del:hover {
+.btn-del {
+  background: none;
+  border: 0;
+  color: rgb(151, 0, 0);
+}
+
+#btn-clear-all:hover, .btn-del:hover {
   background-color: rgb(110, 0, 0);
+  color: white;
 }
 
 #all-messages-control {
@@ -191,8 +210,36 @@ tr:nth-child(even) {
 	text-decoration:none;
   text-shadow:0em 0.06em 0em #92b879;
   outline: none;
+  margin: 0 0.5em;
 }
 
 #btn-save:hover {
   background-color:#68a54b;
+}
+
+#btn-clear {
+  background-color:#bd5f5f;
+	border-radius:1.6em;
+	border:0.06em solid #6e2222;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+  /* font-family: "Montserrat", sans-serif; */
+	font-size: 0.65em;
+	padding: 0.5em 0.9em;
+	text-decoration:none;
+  text-shadow:0em 0.06em 0em #b87979;
+  outline: none;
+  margin: 0 0.5em;
+  display: none;
+}
+
+#btn-clear:hover {
+  background-color:#a54b4b;
+}
+
+#text-input {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.25em;
 }

@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>Home Page</title>
       <link rel="stylesheet" href="index.css">
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
 
   </head>
@@ -24,23 +24,29 @@
     <div class="messages" id="title">
       <h1>BARKER</h1>
     </div>
-    <div class="messages" id='add-messages'>
-        <label for="userInput">Message:</label><br>
+    <div class="messages" id="add-messages">
+      <div>
+        <label for="userInput" id="input-label">Message:</label><br>
         <input type="text" id="userInput" name="userInput">
+      </div>
+      <div id="text-input">
+        <button onclick="clearMsg();" id='btn-clear'>Clear</button>
         <button onclick="saveMsg();" id='btn-save'>Save</button>
+      </div>
     </div>
     <div class="messages" id="all-messages-control">
       <button id="show-all" onclick="showAllMsg();">Show all</button>
       <button id="hide-all" onclick="hideAllMsg();">Hide all</button>
     </div>
-    <div class="messages" id="all-messages">
-      <table id="message-table" class="showing">
+    <div class="messages showing" id="all-messages">
+      <table id="message-table">
         <tr>
           <th class="msg-cell">Messages</th>
-          <th class="del-cell"></th>
+          <th class="del-cell"><button onclick="clearAllMsgs();" id="btn-clear-all">Clear all</button></th>
         </tr>
       </table>
     </div>
   </body>
   <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript" src="responsive.js"></script>
 </html>
