@@ -4,7 +4,7 @@ Task: create a message list website using HTML, CSS and Javascript
 - ~~navbar to navigate between home and about pages~~
 - ~~should be able to add new messages~~
 - ~~button to clear text in input~~
-- ~~button to delete all messages ~~
+- ~~button to delete all messages~~
 - ~~site should be responsive to varying browser sizes~~
 - content for About page
 - styling
