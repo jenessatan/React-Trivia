@@ -6,7 +6,7 @@ Task: create a message list website using HTML, CSS and Javascript
 - ~~button to clear text in input~~
 - ~~button to delete all messages~~
 - ~~site should be responsive to varying browser sizes~~
-- content for About page
+- ~~content for About page~~
 - styling
 
 Extra functionality
@@ -17,7 +17,5 @@ Extra functionality
 - ~~navigation items are hidden in the menu icon when scaled below a certain size~~
 
 TODO:
-- fix header in collapsed menu
-- About page 
 - more styling?
 - more functionality?
