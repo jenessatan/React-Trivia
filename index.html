@@ -3,7 +3,7 @@
   <head>
       <meta charset='UTF-8'>
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Home Page</title>
+      <title>Barker</title>
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="css/homepage.css">
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
@@ -11,21 +11,20 @@
 
   </head>
   <body>
-    <header>
-      <div class='navbar'>
-        <a href="#" class="toggle" id="navHamburger">
-          <i class="fas fa-bars"></i>
-        </a>
-        <div class="right">
-          <a href="index.html" class="link">Home</a>
-          <h1 id="title">BARKER</h1>
-          <a href="about.html" class="link">About</a>
-        </div>
+    <nav>
+      <div class="title">
+        <h2>Barker</h2>
       </div>
-    </header>
-    <!-- <div class="messages" id="title">
-      <h1>BARKER</h1>
-    </div> -->
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
     <div class="messages" id="add-messages">
       <div>
         <label for="userInput" id="input-label">Message:</label><br>
@@ -53,5 +52,5 @@
     </div> -->
   </body>
   <script type="text/javascript" src="js/index.js"></script>
-  <script type="text/javascript" src="js/responsive.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
 </html>

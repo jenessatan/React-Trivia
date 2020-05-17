@@ -16,15 +16,6 @@ body {
   font-size: 0.85em
 }
 
-/* #title {
-  text-align: center;
-} */
-
-#title {
-  font-size: 3em;
-  margin: 0 1.5em;
-}
-
 .showing {
   opacity: 1;
   transform: scaleY(1);
