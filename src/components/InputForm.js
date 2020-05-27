@@ -1,18 +1,28 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {addTrivia} from '../redux/actions';
 
 class InputForm extends React.Component {
 
+  constructor() {
+    super();
+    this.state = {
+      question: '',
+      answer: '',
+      category: ''
+    }
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log('submitted');
-    return false;
+    console.log(this.state);
+    this.props.addTrivia(this.state);
   }
 
   handleChange = (e) => {
     let name = e.target.name;
     let value = e.target.value;
-    let res = {[name]: value};
-    console.log(res);
+    this.setState({[name]: value});
   }
 
   render() {
@@ -26,7 +36,7 @@ class InputForm extends React.Component {
           <input type='search' name='answer' onChange={this.handleChange} required />
 
           <label>Category</label>
-          <select name='category' required>
+          <select name='category' onChange={this.handleChange} required>
             <option value=''>Select One</option>
             <option value='Disney'>Disney</option>
             <option value='Food'>Food</option>
@@ -42,4 +52,9 @@ class InputForm extends React.Component {
   }
 }
 
-export default InputForm;
+const mapStateToProps = (state) => {
+  return {trivia: state.trivia}
+}
+
+export default connect(mapStateToProps, {addTrivia})(InputForm);
+// export default InputForm;
