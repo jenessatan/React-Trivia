@@ -43,8 +43,8 @@ class InputForm extends React.Component {
           </select>
 
         <div className='form-btn'>
-          <input type='submit' id='btn-save' value='Submit' />
-          <input type='reset' id='btn-clear' value='Reset' />
+          <input type='submit' id='btn-save' className='btn' value='Submit' />
+          <input type='reset' id='btn-clear' className='btn' value='Reset' />
         </div>
         </form>
       </div>

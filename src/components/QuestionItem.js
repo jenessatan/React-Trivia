@@ -29,8 +29,8 @@ class QuestionItem extends React.Component {
     let {question, answer} = this.props.item;
     return (
       <div className='question-item'>
-      <div className='card' onMouseOver={this.onMouseOver} onMouseLeave={this.onMouseOut}>
-        <p className='question'>{question}</p>
+      <div className={this.state.hover ? 'card hover' : 'card'} onMouseOver={this.onMouseOver} onMouseLeave={this.onMouseOut}>
+        {!this.state.hover && <p className='question'>{question}</p>}
         {this.state.hover && 
         <div className='item-options'>
           <button onClick={this.toggle} className='answer-btn'>Answer</button>
@@ -38,7 +38,7 @@ class QuestionItem extends React.Component {
         </div>
       }
       </div>
-      <div className={this.state.visible ? 'showing' : 'hiding'}>
+      <div className={(this.state.visible ? 'showing' : 'hiding')+' answer-div'}>
         <p className='answer'>{answer}</p>
       </div>
       </div>

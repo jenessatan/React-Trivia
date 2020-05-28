@@ -37,19 +37,20 @@ form label {
   margin-top: 0.75em;
 }
 
-#btn-save {
-  background-color:#74ad5a;
-	border-radius:1.6em;
-	border:0.06em solid #3b6e22;
+.btn {
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
 	font-size: 0.65em;
 	padding: 0.5em 0.9em;
-	text-decoration:none;
-  text-shadow:0em 0.06em 0em #92b879;
   outline: none;
   margin: 0 0.5em;
+}
+
+#btn-save {
+  background-color:#74ad5a;
+	border:0.06em solid #3b6e22;
+  text-shadow:0em 0.06em 0em #92b879;
 }
 
 #btn-save:hover {
@@ -58,21 +59,61 @@ form label {
 
 #btn-clear {
   background-color:#bd5f5f;
-	border-radius:1.6em;
 	border:0.06em solid #6e2222;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-size: 0.65em;
-	padding: 0.5em 0.9em;
-	text-decoration:none;
   text-shadow:0em 0.06em 0em #b87979;
-  outline: none;
-  margin: 0 0.5em;
 }
 
 #btn-clear:hover {
   background-color:#a54b4b;
+}
+
+.question-list {
+  margin-top: 3em;
+}
+
+.question-list h2 {
+  font-size: 2.5em;
+  color: #223047;
+  margin-bottom: 0
+}
+
+.list-options {
+  border-bottom: 0.05em solid rgb(77, 77, 77);
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 0.75em;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-options button {
+  background-color: transparent;
+  border: none;
+  color: rgb(77, 77, 77);
+}
+
+.list-options button:hover {
+  background-color: #223047;
+  color: #ffffff;
+}
+
+.filters {
+  width: 25%;
+  display: inline-block;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.filters p {
+  display: inline-block;
+  margin: 0;
+}
+
+button.delete-all-btn:hover {
+  background-color: rgb(110, 0, 0);
+  color: #ffffff
 }
 
 .question {
@@ -80,15 +121,22 @@ form label {
   margin: 0;
 }
 
+.hover {
+  background-color: rgba(105, 105, 105, 0.445);
+}
+
+.answer-div {
+  background-color: #408c99;
+  margin: 0 auto;
+  width: 80%;
+  color: white;
+}
+
 .showing {
   opacity: 1;
   transform: scaleY(1);
   transform-origin: top;
   transition: transform 350ms ease 0ms, opacity 400ms ease;
-  background-color: #408c99;
-  margin: 0 auto;
-  width: 80%;
-  color: white;
 }
 
 .hiding {
@@ -104,15 +152,13 @@ form label {
 }
 
 .item-options {
-  padding-bottom: 0.9em;
+  padding: 0.5em 0;
 }
 
-.item-options button {
-    border-radius:1.6em;
+button {
     display:inline-block;
     cursor:pointer;
     color:#ffffff;
-    /* font-family: "Montserrat", sans-serif; */
     font-size: 0.8em;
     padding: 0.6em 1em;
     margin: 0 0.5em;
