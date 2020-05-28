@@ -57,4 +57,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, {addTrivia})(InputForm);
-// export default InputForm;

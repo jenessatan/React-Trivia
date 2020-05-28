@@ -4,8 +4,8 @@ import initialState from './_initialState';
 
 const trivia = (state = initialState, action) => {
   if (action.type === 'ADD_TRIVIA') {
-    state.trivia.push(action.trivia);
-    console.log(state);
+    console.log([...state, action.trivia]);
+    return [...state, action.trivia]
   };
   return state;
 }

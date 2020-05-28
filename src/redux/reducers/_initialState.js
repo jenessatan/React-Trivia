@@ -1,5 +1,4 @@
-export default {
-  trivia: [
+export default [
     {
       question: 'Who was the first Disney character to fart on-screen?',
       answer: 'Pumba (Lion King, 1994)',
@@ -26,4 +25,3 @@ export default {
       category: 'Disney'
     }
   ]
-}
