@@ -1,10 +1,10 @@
 # CPSC 436I - Assignment 2
 
 Task: replicate the create message web application from Assignment 1 using React + Redux
-~- text input to add new messages~
-~- button to save message to list~
-~- pre-loaded message list data stored in the reducer~
-~- list of list items that contain message text~
+- ~text input to add new messages~
+- ~button to save message to list~
+- ~pre-loaded message list data stored in the reducer~
+- ~list of list items that contain message text~
 - basic styling
 - click list item to go to "detailed" view (must be its own React component)
 
@@ -12,11 +12,11 @@ Extra functionality (suggestions from spec):
 - individual buttons for each message list item to delete them
 - filter by category functionality
 - delete all questions
-~- additional form elements that show up in the messages (e.g. text input for name, dropdown that includes different options, etc)~
-~- toggle for each list item that does shows trivia answer~
+- ~additional form elements that show up in the messages (e.g. text input for name, dropdown that includes different options, etc)~
+- ~toggle for each list item that does shows trivia answer~
 
 Optional:
-~- button to clear form~
+- ~button to clear form~
 
 ---
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
