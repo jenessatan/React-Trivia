@@ -22,7 +22,7 @@ class QuestionItem extends React.Component {
   }
 
   showDetails = () => {
-    console.log('show details')
+    console.log(this.props.item.id);
   }
 
   render() {
