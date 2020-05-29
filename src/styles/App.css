@@ -184,3 +184,17 @@ button {
 .detail-btn:hover {
   background-color:#e4685d;
 }
+
+.form-row-2 {
+  display: flex;
+  justify-content: space-between
+}
+
+.form-answer {
+  width: 75%
+}
+
+.form-category {
+  width: 25%;
+  padding: 0 8px;
+}
