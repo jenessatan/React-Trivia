@@ -1,10 +1,11 @@
-// import initialState from './_initialState';
+import initialState from './_initialState';
 
-// export const triviaReducer = (state = initialState.trivia, action) => {
-//   switch (action.type) {
-//     case 1:
-//       return executeAddNewTrivia(state, action);
-//     default:
-//       return state;
-//   }
-// }
+const trivia = (state = initialState.trivia, action) => {
+    if (action.type === 'ADD_TRIVIA') {
+      let id = {id: state.reduce((maxID, item) => Math.max(maxID, item.id), -1) + 1}
+      return [...state, {...action.trivia, ...id}]  
+      };
+    return state;
+}
+
+export default trivia;
