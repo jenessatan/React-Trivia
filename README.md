@@ -10,8 +10,8 @@ Task: replicate the create message web application from Assignment 1 using React
 
 Extra functionality (suggestions from spec):
 - individual buttons for each message list item to delete them
-- filter by category functionality
-- delete all questions
+- ~filter by category functionality~
+- ~delete all questions~
 - ~additional form elements that show up in the messages (e.g. text input for name, dropdown that includes different options, etc)~
 - ~toggle for each list item that does shows trivia answer~
 
