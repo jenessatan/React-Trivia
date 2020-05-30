@@ -13,9 +13,15 @@ class Details extends React.Component {
             &times;
           </button>
         </header>
-        <p>{question}</p>
-        <p>{answer}</p>
-        <p>{category}</p>
+        <div className='modal-content'>
+            <p>{question}</p>
+            <p className='modal-content-label'>Question</p>
+            <p>{answer}</p>
+            <p className='modal-content-label'>Answer</p>
+            <p>{category}</p>
+            <p className='modal-content-label'>Category</p>
+        </div>
+        <button className="delete-item-btn">Delete</button>
       </div>
         </div>
     );
