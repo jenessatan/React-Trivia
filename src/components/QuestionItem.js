@@ -1,11 +1,13 @@
 import React from 'react';
+import Details from './Details'
 
 class QuestionItem extends React.Component {
   constructor() {
     super();
     this.state = {
       visible: false,
-      hover: false
+      hover: false,
+      showModal: false
     }
   }
 
@@ -22,7 +24,11 @@ class QuestionItem extends React.Component {
   }
 
   showDetails = () => {
-    console.log(this.props.item.id);
+    this.setState({showModal: true});
+  }
+
+  closeDetails = () => {
+    this.setState({showModal:false})
   }
 
   render() {
@@ -41,6 +47,7 @@ class QuestionItem extends React.Component {
       <div className={(this.state.visible ? 'showing' : 'hiding')+' answer-div'}>
         <p className='answer'>{answer}</p>
       </div>
+      {this.state.showModal && <Details trivia={this.props.item} onClick={this.closeDetails}/>}
       </div>
     )
   }

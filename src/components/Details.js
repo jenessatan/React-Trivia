@@ -5,11 +5,10 @@ class Details extends React.Component {
         let {question, answer, category} = this.props.trivia;
         return (
             <div className='details-modal'>
-                <button>Close Modal</button>
+                <button className='close-modal-btn' onClick={this.props.onClick}>&times;</button>
                 <p>{question}</p>
                 <p>{answer}</p>
                 <p>{category}</p>
-                <button>Delete Trivia</button>
             </div>
         )
     }
