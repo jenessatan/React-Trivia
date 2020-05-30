@@ -4,3 +4,10 @@ export const addTrivia = trivia => {
     trivia
   }
 }
+
+export const setVisibility = filter => {
+  return {
+    type: 'SET_VISIBILITY_FILTER',
+    filter
+  }
+}

@@ -1,6 +1,7 @@
 import {combineReducers} from 'redux';
-// import trivia from './triviaReducer';
 import initialState from './_initialState';
+// import trivia from './triviaReducer';
+import VisibilityFilter from './visibility';
 
 const trivia = (state = initialState.trivia, action) => {
   if (action.type === 'ADD_TRIVIA') {
@@ -11,7 +12,8 @@ const trivia = (state = initialState.trivia, action) => {
 }
 
 const rootReducer = combineReducers({
-  trivia: trivia
+  trivia: trivia,
+  visibility: VisibilityFilter
 });
 
 export default rootReducer;

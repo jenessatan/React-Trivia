@@ -1,5 +1,4 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import QuestionItem from './QuestionItem';
 import Filter from './Filter';
 
@@ -19,8 +18,4 @@ class QuestionList extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {trivia: state.trivia}
-}
-
-export default connect(mapStateToProps)(QuestionList);
+export default QuestionList

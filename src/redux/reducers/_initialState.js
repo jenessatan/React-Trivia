@@ -29,6 +29,12 @@ export default {
       question: 'What name did Walt Disney originally plan on giving Mickey Mouse?',
       answer: 'Mortimer',
       category: 'Disney'
+    },
+    {
+      id: 6,
+      question: 'What gourmet ingredient used to be force-fed to prisoners and used as fertilizer?',
+      answer: 'Lobster',
+      category: 'Food'
     }
   ],
   visibility: 'SHOW_ALL'
