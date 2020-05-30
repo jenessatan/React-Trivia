@@ -5,11 +5,11 @@ Task: replicate the create message web application from Assignment 1 using React
 - ~button to save message to list~
 - ~pre-loaded message list data stored in the reducer~
 - ~list of list items that contain message text~
-- basic styling
-- click list item to go to "detailed" view (must be its own React component)
+- ~basic styling~
+- ~click list item to go to "detailed" view (must be its own React component)~
 
 Extra functionality (suggestions from spec):
-- individual buttons for each message list item to delete them
+- ~individual buttons for each message list item to delete them~
 - ~filter by category functionality~
 - ~delete all questions~
 - ~additional form elements that show up in the messages (e.g. text input for name, dropdown that includes different options, etc)~
@@ -17,6 +17,12 @@ Extra functionality (suggestions from spec):
 
 Optional:
 - ~button to clear form~
+
+Resources used as reference:
+- In-Lecture activity
+- [Redux To-Do List Example] (https://redux.js.org/basics/example)
+- [Build a Simple Modal Component] (https://blog.bitsrc.io/build-a-simple-modal-component-with-react-16decdc111a6)
+- [React Conditional Rendering] (https://reactjs.org/docs/conditional-rendering.html)
 
 ---
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
