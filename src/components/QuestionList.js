@@ -1,6 +1,7 @@
 import React from 'react';
 import QuestionItem from './QuestionItem';
 import Filter from './Filter';
+import '../styles/QuestionList.css'
 
 class QuestionList extends React.Component {
   render() {
@@ -11,8 +12,8 @@ class QuestionList extends React.Component {
           <Filter />
         <button className='delete-all-btn' onClick={this.props.deleteAllTrivia}>Delete All</button>
         </div>
-          {this.props.trivia.map((val,idx )=>
-            <QuestionItem key={idx} item={val} />)}
+          {this.props.trivia.map((val)=>
+            <QuestionItem key={val.id} item={val} delete={this.props.deleteTrivia}/>)}
       </div>
     )
   }

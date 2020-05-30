@@ -43,7 +43,7 @@ class QuestionItem extends React.Component {
       <div className={(this.state.visible ? 'showing' : 'hiding')+' answer-div'}>
         <p className='answer'>{answer}</p>
       </div>
-      {this.state.showModal && <Details trivia={this.props.item} onClick={this.toggleDetails}/>}
+      {this.state.showModal && <Details item={this.props.item} onClick={this.toggleDetails} delete={this.props.delete}/>}
       </div>
     )
   }

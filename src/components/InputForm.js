@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addTrivia } from "../redux/actions";
+import '../styles/InputForm.css'
 
 class InputForm extends React.Component {
   constructor() {
