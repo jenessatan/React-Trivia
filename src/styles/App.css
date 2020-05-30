@@ -93,6 +93,11 @@ form label {
 }
 
 .list-options button:hover {
+  background-color: #657288;
+  color: #ffffff;
+}
+
+button.active-filter {
   background-color: #223047;
   color: #ffffff;
 }
