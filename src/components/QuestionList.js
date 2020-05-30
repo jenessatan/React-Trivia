@@ -9,7 +9,7 @@ class QuestionList extends React.Component {
         <h2>Question List</h2>
         <div className='list-options'>
           <Filter />
-        <button className='delete-all-btn'>Delete All</button>
+        <button className='delete-all-btn' onClick={this.props.deleteAllTrivia}>Delete All</button>
         </div>
           {this.props.trivia.map((val,idx )=>
             <QuestionItem key={idx} item={val} />)}

@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import QuestionList from '../components/QuestionList';
 import {VisibilityFilters} from '../constants/Filters';
+import {deleteAllTrivia} from '../redux/actions'
 
 const getVisibleTodos = (items, filter) => {
     switch (filter) {
@@ -21,5 +22,5 @@ const getVisibleTodos = (items, filter) => {
 
   
   export default connect(
-    mapStateToProps
+    mapStateToProps, {deleteAllTrivia}
   )(QuestionList)
