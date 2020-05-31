@@ -3,7 +3,7 @@ import QuestionList from "../components/QuestionList";
 import { VisibilityFilters } from "../constants/Filters";
 import { deleteAllTrivia, deleteTrivia } from "../redux/actions";
 
-const getVisibleTodos = (items, filter) => {
+const getVisibleTrivia = (items, filter) => {
   switch (filter) {
     case VisibilityFilters.SHOW_ALL:
       return items;
@@ -17,7 +17,7 @@ const getVisibleTodos = (items, filter) => {
 };
 
 const mapStateToProps = (state) => ({
-  trivia: getVisibleTodos(state.trivia, state.visibility),
+  trivia: getVisibleTrivia(state.trivia, state.visibility),
 });
 
 export default connect(mapStateToProps, { deleteAllTrivia, deleteTrivia })(
