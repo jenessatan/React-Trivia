@@ -10,7 +10,6 @@ const trivia = (state = initialState.trivia, action) => {
   } 
   
   if (action.type === DELETE_ITEM) {
-    console.log(action.id);
     return state.filter((item) => item.id !== action.id);
   } 
   
