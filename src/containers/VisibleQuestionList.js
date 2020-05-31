@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import QuestionList from "../components/QuestionList";
 import { VisibilityFilters } from "../constants/Filters";
-import { deleteAllTrivia, deleteTrivia } from "../redux/actions";
+import { deleteAllTrivia } from "../redux/actions";
 
 const getVisibleTrivia = (items, filter) => {
   switch (filter) {
@@ -20,6 +20,6 @@ const mapStateToProps = (state) => ({
   trivia: getVisibleTrivia(state.trivia, state.visibility),
 });
 
-export default connect(mapStateToProps, { deleteAllTrivia, deleteTrivia })(
+export default connect(mapStateToProps, { deleteAllTrivia })(
   QuestionList
 );

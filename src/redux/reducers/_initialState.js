@@ -37,5 +37,13 @@ export default {
       category: 'Disney'
     }
   ],
-  visibility: 'SHOW_ALL'
+  visibility: 'SHOW_ALL',
+  modal: {
+    isOpen: false,
+    data: {
+      question:'',
+      answer:'',
+      category:''
+    }
+  }
 }

@@ -2,8 +2,7 @@ import React from "react";
 import { VisibilityFilters } from "../constants/Filters";
 import FilterLink from "../containers/FilterLink";
 
-class Filter extends React.Component {
-  render() {
+const Filter = () => {
     return (
       <div className="filters">
         <p>Filter: </p>
@@ -12,7 +11,6 @@ class Filter extends React.Component {
         <FilterLink filter={VisibilityFilters.SHOW_FOOD}>Food</FilterLink>
       </div>
     );
-  }
 }
 
 export default Filter;

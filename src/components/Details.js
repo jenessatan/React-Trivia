@@ -1,20 +1,14 @@
 import React from "react";
 import "../styles/Details.css";
 
-class Details extends React.Component {
-  deleteItem = () => {
-    this.props.onClick();
-    this.props.delete(this.props.item);
-  };
-
-  render() {
-    let { question, answer, category } = this.props.item;
+const Details = ({modal, closeModal, deleteTrivia}) => {
+    let { question, answer, category } = modal.data;
     return (
       <div className="modal">
         <div className="details-modal">
           <header className="modal-header">
             <h3>Details</h3>
-            <button className="close-modal-btn" onClick={this.props.onClick}>
+            <button className="close-modal-btn" onClick={closeModal}>
               &times;
             </button>
           </header>
@@ -26,13 +20,14 @@ class Details extends React.Component {
             <p>{category}</p>
             <p className="modal-content-label">Category</p>
           </div>
-          <button className="delete-item-btn" onClick={this.deleteItem}>
+          <button className="delete-item-btn" onClick={() => {    
+            closeModal();
+            deleteTrivia(modal.data);}}>
             Delete
           </button>
         </div>
       </div>
     );
-  }
 }
 
 export default Details;

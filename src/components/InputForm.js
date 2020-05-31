@@ -1,6 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
-import { addTrivia } from "../redux/actions";
 import '../styles/InputForm.css'
 
 class InputForm extends React.Component {
@@ -68,8 +66,4 @@ class InputForm extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { trivia: state.trivia };
-};
-
-export default connect(mapStateToProps, { addTrivia })(InputForm);
+export default InputForm;

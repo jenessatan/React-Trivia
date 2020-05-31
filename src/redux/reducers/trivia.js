@@ -7,11 +7,17 @@ const trivia = (state = initialState.trivia, action) => {
       id: state.reduce((maxID, item) => Math.max(maxID, item.id), -1) + 1,
     };
     return [...state, { ...action.trivia, ...id }];
-  } else if (action.type === DELETE_ITEM) {
+  } 
+  
+  if (action.type === DELETE_ITEM) {
+    console.log(action.id);
     return state.filter((item) => item.id !== action.id);
-  } else if (action.type === DELETE_ALL_ITEMS) {
+  } 
+  
+  if (action.type === DELETE_ALL_ITEMS) {
     return [];
   }
+  
   return state;
 };
 

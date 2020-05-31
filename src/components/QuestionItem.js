@@ -1,5 +1,5 @@
 import React from 'react';
-import Details from './Details'
+import DetailsContainer from '../containers/DetailsContainer'
 
 class QuestionItem extends React.Component {
   constructor() {
@@ -7,7 +7,6 @@ class QuestionItem extends React.Component {
     this.state = {
       visible: false,
       hover: false,
-      showModal: false
     }
   }
 
@@ -36,14 +35,14 @@ class QuestionItem extends React.Component {
         {this.state.hover && 
         <div className='item-options'>
           <button onClick={this.toggle} className='answer-btn'>Answer</button>
-          <button onClick={this.toggleDetails} className='detail-btn'>Details</button>
+          <button onClick={()=> this.props.openModal(this.props.item)} className='detail-btn'>Details</button>
         </div>
       }
       </div>
       <div className={(this.state.visible ? 'showing' : 'hiding')+' answer-div'}>
         <p className='answer'>{answer}</p>
       </div>
-      {this.state.showModal && <Details item={this.props.item} onClick={this.toggleDetails} delete={this.props.delete}/>}
+      {this.props.modal.isOpen && <DetailsContainer />}
       </div>
     )
   }

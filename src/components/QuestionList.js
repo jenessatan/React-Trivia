@@ -1,23 +1,21 @@
 import React from 'react';
-import QuestionItem from './QuestionItem';
+import QuestionItemContainer from '../containers/QuestionItemContainer';
 import Filter from './Filter';
 import '../styles/QuestionList.css';
 
-class QuestionList extends React.Component {
-  render() {
+const QuestionList = ({trivia, deleteAllTrivia}) => {
     return (
       <div className='question-list'>
         <h2>Question List</h2>
         <div className='list-options'>
           <Filter />
-        <button className='delete-all-btn' onClick={this.props.deleteAllTrivia}>Delete All</button>
+        <button className='delete-all-btn' onClick={deleteAllTrivia}>Delete All</button>
         </div>
-          { this.props.trivia.length === 0 ? <p>There are no available questions</p> :
-          this.props.trivia.map((val)=>
-            <QuestionItem key={val.id} item={val} delete={this.props.deleteTrivia}/>)}
+          { trivia.length === 0 ? <p>There are no available questions</p> :
+          trivia.map((val)=>
+            <QuestionItemContainer key={val.id} item={val}/>)}
       </div>
     )
-  }
 }
 
 export default QuestionList
