@@ -20,9 +20,9 @@ Optional:
 
 Resources used as reference:
 - In-Lecture activity
-- [Redux To-Do List Example] (https://redux.js.org/basics/example)
-- [Build a Simple Modal Component] (https://blog.bitsrc.io/build-a-simple-modal-component-with-react-16decdc111a6)
-- [React Conditional Rendering] (https://reactjs.org/docs/conditional-rendering.html)
+- [Redux To-Do List Example](https://redux.js.org/basics/example)
+- [Build a Simple Modal Component](https://blog.bitsrc.io/build-a-simple-modal-component-with-react-16decdc111a6)
+- [React Conditional Rendering](https://reactjs.org/docs/conditional-rendering.html)
 
 ---
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
