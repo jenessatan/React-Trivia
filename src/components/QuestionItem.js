@@ -6,7 +6,7 @@ class QuestionItem extends React.Component {
     super();
     this.state = {
       visible: false,
-      hover: false,
+      hover: null,
     }
   }
 
@@ -15,11 +15,11 @@ class QuestionItem extends React.Component {
   }
 
   onMouseOver = () => {
-    this.setState({hover: true})
+    this.setState({hover: this.props.item._id})
   }
 
   onMouseOut = () => {
-    this.setState({hover: false})
+    this.setState({hover: null})
   }
 
   toggleDetails = () => {
@@ -27,12 +27,12 @@ class QuestionItem extends React.Component {
   }
 
   render() {
-    let {question, answer} = this.props.item;
+    let {question, answer, _id} = this.props.item;
     return (
       <div className='question-item'>
-      <div className={this.state.hover ? 'card hover' : 'card'} onMouseEnter={this.onMouseOver} onMouseLeave={this.onMouseOut}>
-        {!this.state.hover && <p className='question'>{question}</p>}
-        {this.state.hover && 
+      <div className={this.state.hover === _id ? 'card hover' : 'card'} onMouseEnter={this.onMouseOver} onMouseLeave={this.onMouseOut}>
+        {(this.state.hover !== _id) && <p className='question'>{question}</p>}
+        {(this.state.hover === _id) && 
         <div className='item-options'>
           <button onClick={this.toggle} className='answer-btn'>Answer</button>
           <button onClick={()=> this.props.openModal(this.props.item)} className='detail-btn'>Details</button>
