@@ -1,5 +1,6 @@
 import React from "react";
-import '../styles/InputForm.css'
+import '../styles/InputForm.css';
+import StarRating from "./StarRating";
 
 class InputForm extends React.Component {
   constructor() {
@@ -8,6 +9,7 @@ class InputForm extends React.Component {
       question: "",
       answer: "",
       category: "",
+      rating: null
     };
   }
 
@@ -18,6 +20,7 @@ class InputForm extends React.Component {
   };
 
   handleChange = (e) => {
+    console.log(e.target.value);
     let name = e.target.name;
     let value = e.target.value;
     this.setState({ [name]: value });
@@ -55,6 +58,9 @@ class InputForm extends React.Component {
               </select>
             </div>
           </div>
+
+          <label>Difficulty</label>
+          <StarRating onChange={this.handleChange} currentRating={this.state.rating}/>
 
           <div className="form-btn">
             <input type="submit" id="btn-save" className="btn" value="Submit" />
