@@ -13,7 +13,7 @@ const QuestionList = ({trivia, deleteAllTrivia}) => {
         </div>
           { trivia.length === 0 ? <p>There are no available questions</p> :
           trivia.map((val)=>
-            <QuestionItemContainer key={val.id} item={val}/>)}
+            <QuestionItemContainer key={val._id} item={val}/>)}
       </div>
     )
 }

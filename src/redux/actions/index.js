@@ -10,7 +10,7 @@ export const addTrivia = trivia => {
 export const deleteTrivia = trivia => {
   return {
     type: DELETE_ITEM,
-    id: trivia.id
+    _id: trivia._id
   }
 }
 
