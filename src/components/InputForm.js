@@ -16,20 +16,34 @@ class InputForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     e.target.reset();
-    this.props.addTrivia(this.state);
+    let submitted = this.state;
+    this.setState({     
+      question: "",
+      answer: "",
+      category: "",
+      rating: null});
+    this.props.addTrivia(submitted);
   };
 
   handleChange = (e) => {
-    console.log(e.target.value);
     let name = e.target.name;
     let value = e.target.value;
     this.setState({ [name]: value });
   };
 
+  handleReset = (e) => {
+    e.target.reset();
+    this.setState({     
+      question: "",
+      answer: "",
+      category: "",
+      rating: null})
+  }
+
   render() {
     return (
       <div className="card">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} onReset={this.handleReset}>
               <label>Question</label>
               <input
                 type="search"
