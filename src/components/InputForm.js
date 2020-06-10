@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/InputForm.css';
-import StarRating from "./StarRating";
+import StarRatingInput from "./StarRatingInput";
 
 class InputForm extends React.Component {
   constructor() {
@@ -9,7 +9,7 @@ class InputForm extends React.Component {
       question: "",
       answer: "",
       category: "",
-      rating: null
+      difficulty: null
     };
   }
 
@@ -21,7 +21,7 @@ class InputForm extends React.Component {
       question: "",
       answer: "",
       category: "",
-      rating: null});
+      difficulty: null});
     this.props.addTrivia(submitted);
   };
 
@@ -37,7 +37,7 @@ class InputForm extends React.Component {
       question: "",
       answer: "",
       category: "",
-      rating: null})
+      difficulty: null})
   }
 
   render() {
@@ -77,7 +77,7 @@ class InputForm extends React.Component {
             </div>
             <div className="form-rating">
               <label>Difficulty</label>
-              <StarRating onChange={this.handleChange} currentRating={this.state.rating}/>
+              <StarRatingInput onChange={this.handleChange} currentRating={this.state.difficulty}/>
             </div>
 
           </div>

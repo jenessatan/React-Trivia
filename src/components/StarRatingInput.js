@@ -1,8 +1,8 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-class StarRating extends React.Component{
+class StarRatingInput extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
@@ -25,8 +25,9 @@ class StarRating extends React.Component{
         {[...Array(5)].map((star, i) => {
           let ratingValue = i+1;
 
-          return <label key={i}>
-            <input type="radio" name="rating" value={ratingValue} onClick={onChange}/>
+          return (
+          <label key={i}>
+            <input type="radio" name="difficulty" value={ratingValue} onClick={onChange}/>
             <FontAwesomeIcon 
               className="star" 
               icon={faStar} 
@@ -34,11 +35,11 @@ class StarRating extends React.Component{
               size="2x"
               onMouseEnter={() => this.handleHover(ratingValue)}
               onMouseLeave={() => this.handleHover(null)}/>
-            </label>
+            </label>)
         })}
       </div>
     )
   }
 }
 
-export default StarRating;
+export default StarRatingInput;
