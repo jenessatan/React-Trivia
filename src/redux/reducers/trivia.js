@@ -4,7 +4,7 @@ import {ADD_ITEM, DELETE_ITEM, DELETE_ALL_ITEMS} from '../../constants/ActionTyp
 const trivia = (state = initialState.trivia, action) => {
   if (action.type === ADD_ITEM) {
     let _id = {
-      _id: state.reduce((maxID, item) => Math.max(maxID, item.id), -1) + 1,
+      _id: state.reduce((maxID, item) => Math.max(maxID, item._id), -1) + 1,
     };
     return [...state, { ...action.trivia, ..._id }];
   } 
