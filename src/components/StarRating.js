@@ -2,25 +2,61 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 
-const StarRating = (props) => {
-  const defaultColour = "#CFCFCF";
-  const hoverColour = "#223047";
+class StarRating extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      hover: null
+    }
+  }
 
-  console.log(props);
-  return (
-    <div>
-      {[...Array(5)].map((star, i) => {
-        let ratingValue = i+1;
+  handleHover(item) {
+    this.setState({hover: item})
+  }
 
-        return <label key={i}>
-          <input type="radio" name="rating" value={ratingValue} onClick={props.onChange} onMouseEnter={} onMouseLeave={}/>
-          <FontAwesomeIcon className="star" icon={faStar} color={ratingValue <= props.currentRating? hoverColour : defaultColour} size="2x"/>
-          </label>
-      })}
-      {/* <FontAwesomeIcon icon={faStar} color={hoverColour} size="lg"/>
-      <FontAwesomeIcon icon={faStar} color={defaultColour} size="lg"/> */}
-    </div>
-  )
+  render() {
+    let {onChange, currentRating} = this.props;
+
+    const defaultColour = "#CFCFCF";
+    const hoverColour = "#223047";
+
+    return (
+      <div>
+        {[...Array(5)].map((star, i) => {
+          let ratingValue = i+1;
+
+          return <label key={i}>
+            <input type="radio" name="rating" value={ratingValue} onClick={onChange}/>
+            <FontAwesomeIcon 
+              className="star" 
+              icon={faStar} 
+              color={ratingValue <= (this.state.hover || currentRating)? hoverColour : defaultColour} 
+              size="2x"
+              onMouseEnter={() => this.handleHover(ratingValue)}
+              onMouseLeave={() => this.handleHover(null)}/>
+            </label>
+        })}
+      </div>
+    )
+  }
 }
+
+// const StarRating = (props) => {
+//   const defaultColour = "#CFCFCF";
+//   const hoverColour = "#223047";
+
+//   return (
+//     <div>
+//       {[...Array(5)].map((star, i) => {
+//         let ratingValue = i+1;
+
+//         return <label key={i}>
+//           <input type="radio" name="rating" value={ratingValue} onClick={props.onChange}/>
+//           <FontAwesomeIcon className="star" icon={faStar} color={ratingValue <= props.currentRating? hoverColour : defaultColour} size="2x"/>
+//           </label>
+//       })}
+//     </div>
+//   )
+// }
 
 export default StarRating;
