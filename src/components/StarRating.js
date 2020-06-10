@@ -21,7 +21,7 @@ class StarRating extends React.Component{
     const hoverColour = "#223047";
 
     return (
-      <div>
+      <div className="rating">
         {[...Array(5)].map((star, i) => {
           let ratingValue = i+1;
 
@@ -40,23 +40,5 @@ class StarRating extends React.Component{
     )
   }
 }
-
-// const StarRating = (props) => {
-//   const defaultColour = "#CFCFCF";
-//   const hoverColour = "#223047";
-
-//   return (
-//     <div>
-//       {[...Array(5)].map((star, i) => {
-//         let ratingValue = i+1;
-
-//         return <label key={i}>
-//           <input type="radio" name="rating" value={ratingValue} onClick={props.onChange}/>
-//           <FontAwesomeIcon className="star" icon={faStar} color={ratingValue <= props.currentRating? hoverColour : defaultColour} size="2x"/>
-//           </label>
-//       })}
-//     </div>
-//   )
-// }
 
 export default StarRating;

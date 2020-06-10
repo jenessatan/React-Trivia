@@ -44,25 +44,16 @@ class InputForm extends React.Component {
     return (
       <div className="card">
         <form onSubmit={this.handleSubmit} onReset={this.handleReset}>
+          <div className="form-row">
+            <div className="form-text">
               <label>Question</label>
-              <input
-                type="search"
-                name="question"
-                onChange={this.handleChange}
-                required
-              />
-
-          <div className="form-row-2">
-            <div className="form-answer">
-              <label>Answer</label>
-              <input
-                type="search"
-                name="answer"
-                onChange={this.handleChange}
-                required
-              />
+                <input
+                  type="search"
+                  name="question"
+                  onChange={this.handleChange}
+                  required
+                />
             </div>
-
             <div className="form-category">
               <label>Category</label>
               <select name="category" onChange={this.handleChange} required>
@@ -73,8 +64,23 @@ class InputForm extends React.Component {
             </div>
           </div>
 
-          <label>Difficulty</label>
-          <StarRating onChange={this.handleChange} currentRating={this.state.rating}/>
+
+          <div className="form-row">
+            <div className="form-text">
+              <label>Answer</label>
+              <input
+                type="search"
+                name="answer"
+                onChange={this.handleChange}
+                required
+              />
+            </div>
+            <div className="form-rating">
+              <label>Difficulty</label>
+              <StarRating onChange={this.handleChange} currentRating={this.state.rating}/>
+            </div>
+
+          </div>
 
           <div className="form-btn">
             <input type="submit" id="btn-save" className="btn" value="Submit" />

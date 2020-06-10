@@ -55,12 +55,12 @@ form label {
     background-color: #a54b4b;
 }
 
-.form-row-2 {
+.form-row {
     display: flex;
     justify-content: space-between
 }
 
-.form-answer {
+.form-text {
     width: 75%
 }
 
@@ -76,4 +76,14 @@ input[type=radio] {
 .star {
     cursor: pointer;
     transition: color 200ms;
+}
+
+.form-rating {
+    width: 25%;
+    padding: 0 8px;
+}
+
+.rating {
+    margin: 8px;
+    padding: 5px 0px;
 }
