@@ -15,3 +15,4 @@ Task: Integrate Frontend and Backend with Node and Express
   - as listed above, editing a message
 
 Resources used:
+- [Redux docs for configuring store](https://redux.js.org/recipes/configuring-your-store)
