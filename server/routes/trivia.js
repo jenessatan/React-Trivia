@@ -1,6 +1,6 @@
-var express = require('express');
+import express from 'express';
+import TriviaItem from '../models/triviaItems';
 var router = express.Router();
-var TriviaItem = require('../models/triviaItems');
 
 
 /* GET users listing. */
@@ -34,4 +34,4 @@ router.delete('./:id', async function(req, res, next) {
   }
 })
 
-module.exports = router;
+export default router;

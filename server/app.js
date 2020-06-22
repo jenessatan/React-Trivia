@@ -1,15 +1,15 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var cors = require('cors');
-var mongoose = require('mongoose');
-var dotenv = require('dotenv').config();
+import createError from 'http-errors';
+import cors from 'cors';
+import mongoose from 'mongoose';
+import 'dotenv/config';
 
-var indexRouter = require('./routes/index');
-// var usersRouter = require('./routes/users');
-var triviaRouter = require('./routes/trivia');
+import express from 'express';
+import path from 'path';
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
+import indexRouter from './routes/index';
+import usersRouter from './routes/users';
+import triviaRouter from './routes/trivia';
 
 var app = express();
 
@@ -57,4 +57,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+export default app;
