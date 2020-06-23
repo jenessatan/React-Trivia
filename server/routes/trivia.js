@@ -1,37 +1,76 @@
 import express from 'express';
+import {uuid} from 'uuidv4';
 import TriviaItem from '../models/triviaItems';
 var router = express.Router();
 
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
   // res.send('questions and answers');
   TriviaItem.find()
-    .then(function(docs) {
-      res.send(docs);
+    .then((triviaItems) => {
+      res.status(200).json({
+        status: 'success',
+        data: triviaItems
+      })
+    })
+    .catch(err => {
+      res.status(404).json({
+        status: 'fail',
+        message: err
+      })
     })
 });
 
-router.get('/:id', function(req, res, next) {
-  TriviaItem.findById(req.params.id)
-    .then(function(doc) {
-      res.send(doc)
-    })
-})
-
-router.delete('./:id', async function(req, res, next) {
-  try {
-    await Tour.findByIdAndDelete(req.params.id);
-    res.status(204).json({
+router.get('/:id', (req, res, next) => {
+TriviaItem.findById(req.params.id)
+  .then((triviaItem) => {
+    res.status(200).json({
       status: 'success',
-      data: null
-    });
-  } catch (err) {
+      data: triviaItem
+    })
+  })
+  .catch(err => {
     res.status(404).json({
       status: 'fail',
       message: err
-    });
-  }
+    })
+  })
+})
+
+router.delete('/:id', (req, res, next) => {
+  TriviaItem.findByIdAndDelete(req.params.id)
+    .then((removedTriviaItem) => {
+      res.status(200).json({
+        status: 'success',
+        data: removedTriviaItem
+      })
+    })
+    .catch(err => {
+      res.status(404).json({
+        status:'fail',
+        message: err
+      })
+    })
+})
+
+router.post('/', (req, res, next) => {
+  let itemInput = req.body;
+  let newItem = new TriviaItem(itemInput);
+
+  newItem.save()
+    .then((result) => {
+      res.status(200).json({
+        status: 'success',
+        data: result._id
+      })
+    })
+    .catch(err => {
+      res.status(404).json({
+        status:'fail',
+        message: err
+      })
+    })
 })
 
 export default router;

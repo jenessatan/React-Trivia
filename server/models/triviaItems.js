@@ -1,11 +1,6 @@
 import mongoose from "mongoose";
 
 const triviaItemSchema = new mongoose.Schema({
-  _id:{
-    type: Number,
-    unique: true,
-    required: true
-  },
   question: {
     type: String,
     unique: true,
