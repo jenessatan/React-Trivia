@@ -4,7 +4,7 @@ import Filter from './Filter';
 import '../styles/QuestionList.css';
 import { connect } from "react-redux";
 import { VisibilityFilters } from "../constants/Filters";
-import { getAllTrivia  } from "../redux/actions";
+import { getAllTrivia, deleteAllTriviaItems  } from "../redux/actions";
 // import { deleteAllTrivia } from "../redux/actions";
 
 class QuestionList extends React.Component {
@@ -13,13 +13,13 @@ class QuestionList extends React.Component {
   }
 
   render() {
-    let {trivia} = this.props;
+    let {trivia, deleteAllTriviaItems} = this.props;
         return (
           <div className='question-list'>
             <h2>Question List</h2>
             <div className='list-options'>
               <Filter />
-            {/* <button className='delete-all-btn' onClick={deleteAllTrivia}>Delete All</button> */}
+            <button className='delete-all-btn' onClick={deleteAllTriviaItems}>Delete All</button>
             </div>
               { trivia.length === 0 ? <p>There are no available questions</p> :
               trivia.map((val)=>
@@ -48,4 +48,4 @@ const mapStateToProps = (state) => ({
 });
 
 
-export default connect(mapStateToProps, {getAllTrivia})(QuestionList);
+export default connect(mapStateToProps, {getAllTrivia, deleteAllTriviaItems})(QuestionList);

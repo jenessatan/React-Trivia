@@ -4,7 +4,7 @@ import TriviaItem from '../models/triviaItems';
 var router = express.Router();
 
 
-/* GET users listing. */
+/* GET all trivia items. */
 router.get('/api/', (req, res, next) => {
   // res.send('questions and answers');
   TriviaItem.find()
@@ -22,22 +22,24 @@ router.get('/api/', (req, res, next) => {
     })
 });
 
+/* GET trivia item by ID. */
 router.get('/api/:id', (req, res, next) => {
-TriviaItem.findById(req.params.id)
-  .then((triviaItem) => {
-    res.status(200).json({
-      status: 'success',
-      trivia: triviaItem
+  TriviaItem.findById(req.params.id)
+    .then((triviaItem) => {
+      res.status(200).json({
+        status: 'success',
+        trivia: triviaItem
+      })
     })
-  })
-  .catch(err => {
-    res.status(404).json({
-      status: 'fail',
-      message: err
+    .catch(err => {
+      res.status(404).json({
+        status: 'fail',
+        message: err
+      })
     })
-  })
 })
 
+/* DELETE trivia item by ID. */
 router.delete('/api/:id', (req, res, next) => {
   TriviaItem.findByIdAndDelete(req.params.id)
     .then((removedTriviaItem) => {
@@ -54,13 +56,14 @@ router.delete('/api/:id', (req, res, next) => {
     })
 })
 
+/* POST new trivia item. */
 router.post('/api/', (req, res, next) => {
   let itemInput = req.body;
   let newItem = new TriviaItem(itemInput);
 
   newItem.save()
     .then((result) => {
-      res.status(200).json({
+      res.status(201).json({
         status: 'success',
         id: result._id
       })
@@ -72,5 +75,23 @@ router.post('/api/', (req, res, next) => {
       })
     })
 })
+
+/* DELETE all trivia items. */
+router.delete('/api/', (req,res, next) => {
+  TriviaItem.deleteMany()
+    .then((result) => {
+      res.status(200).json({
+        status: 'success',
+        trivia: result
+      })
+    })
+    .catch(err => {
+      res.status(404).json({
+        status:'fail',
+        message: err
+      })
+    })
+})
+
 
 export default router;

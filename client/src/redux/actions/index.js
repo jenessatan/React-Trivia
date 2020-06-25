@@ -22,7 +22,7 @@ const deleteTrivia = trivia => {
   }
 }
 
-export const deleteAllTrivia = () => {
+const deleteAllTrivia = () => {
   return {
     type: DELETE_ALL_ITEMS
   }
@@ -76,10 +76,21 @@ export const deleteTriviaItem = (trivia) => {
   return dispatch => {
     API.delete(`/trivia/api/${trivia._id}`)
     .then(res => {
-      console.log(res);
       dispatch(deleteTrivia(trivia));
     }).catch(err => {
       console.log(err);
     })
+  }
+}
+
+export const deleteAllTriviaItems = () => {
+  return dispatch => {
+    API.delete('/trivia/api/')
+      .then(res => {
+        console.log(res.data.trivia.deletedCount);
+        dispatch(deleteAllTrivia());
+      }).catch(err => {
+        console.log(err);
+      })
   }
 }
