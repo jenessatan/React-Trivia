@@ -11,7 +11,7 @@ router.get('/', (req, res, next) => {
     .then((triviaItems) => {
       res.status(200).json({
         status: 'success',
-        data: triviaItems
+        trivia: triviaItems
       })
     })
     .catch(err => {
@@ -27,7 +27,7 @@ TriviaItem.findById(req.params.id)
   .then((triviaItem) => {
     res.status(200).json({
       status: 'success',
-      data: triviaItem
+      trivia: triviaItem
     })
   })
   .catch(err => {
@@ -43,7 +43,7 @@ router.delete('/:id', (req, res, next) => {
     .then((removedTriviaItem) => {
       res.status(200).json({
         status: 'success',
-        data: removedTriviaItem
+        trivia: removedTriviaItem
       })
     })
     .catch(err => {
@@ -62,7 +62,7 @@ router.post('/', (req, res, next) => {
     .then((result) => {
       res.status(200).json({
         status: 'success',
-        data: result._id
+        id: result._id
       })
     })
     .catch(err => {

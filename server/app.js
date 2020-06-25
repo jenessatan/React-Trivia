@@ -10,6 +10,8 @@ import logger from 'morgan';
 import indexRouter from './routes/index';
 import usersRouter from './routes/users';
 import triviaRouter from './routes/trivia';
+import debugLib from 'debug';
+const debug = debugLib('server:server');
 
 var app = express();
 
@@ -24,13 +26,18 @@ mongoose
     useCreateIndex: true,
     useUnifiedTopology: true
   })
-  .then(() => console.log('DB connnection successful!'));
+  .then(() => debug('DB connnection successful!'));
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
 app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 // app.use('/users', usersRouter);
