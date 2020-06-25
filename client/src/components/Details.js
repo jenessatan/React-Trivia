@@ -4,7 +4,6 @@ import ViewOnlyRating from './ViewOnlyRating';
 
 const Details = ({modal, closeModal, deleteTrivia}) => {
     let { question, answer, category, difficulty } = modal.data;
-    console.log(modal.data);
     return (
       <div className="modal">
         <div className="details-modal">

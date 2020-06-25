@@ -22,7 +22,7 @@ class InputForm extends React.Component {
       answer: "",
       category: "",
       difficulty: null});
-    this.props.addTrivia(submitted);
+    this.props.createTriviaItem(submitted);
   };
 
   handleChange = (e) => {

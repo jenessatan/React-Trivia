@@ -1,12 +1,8 @@
-import initialState from "./_initialState";
-import {ADD_ITEM, DELETE_ITEM, DELETE_ALL_ITEMS} from '../../constants/ActionTypes';
+import {ADD_ITEM, DELETE_ITEM, DELETE_ALL_ITEMS, LOAD_ALL_ITEMS} from '../../constants/ActionTypes';
 
-const trivia = (state = initialState.trivia, action) => {
+const trivia = (state = [], action) => {
   if (action.type === ADD_ITEM) {
-    let _id = {
-      _id: state.reduce((maxID, item) => Math.max(maxID, item._id), -1) + 1,
-    };
-    return [...state, { ...action.trivia, ..._id }];
+    return [...state, { ...action.trivia/* , ..._id */ }];
   } 
   
   if (action.type === DELETE_ITEM) {
@@ -17,6 +13,10 @@ const trivia = (state = initialState.trivia, action) => {
     return [];
   }
   
+  if (action.type === LOAD_ALL_ITEMS) {
+    return action.trivia
+  }
+
   return state;
 };
 
