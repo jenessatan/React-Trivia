@@ -4,14 +4,10 @@ import Filter from './Filter';
 import '../styles/QuestionList.css';
 import { connect } from "react-redux";
 import { VisibilityFilters } from "../constants/Filters";
-import { getAllTrivia  } from "../redux/actions/trivia";
+import { getAllTrivia  } from "../redux/actions";
 // import { deleteAllTrivia } from "../redux/actions";
 
 class QuestionList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.getAllTrivia();
   }

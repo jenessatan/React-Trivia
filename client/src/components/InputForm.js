@@ -1,6 +1,8 @@
 import React from "react";
 import '../styles/InputForm.css';
 import StarRatingInput from "./StarRatingInput";
+import { connect } from "react-redux";
+import { createTriviaItem } from "../redux/actions";
 
 class InputForm extends React.Component {
   constructor() {
@@ -92,4 +94,4 @@ class InputForm extends React.Component {
   }
 }
 
-export default InputForm;
+export default connect(null, { createTriviaItem })(InputForm);

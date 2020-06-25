@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/Details.css";
 import ViewOnlyRating from './ViewOnlyRating';
 
-const Details = ({modal, closeModal, deleteTrivia}) => {
+const Details = ({modal, closeModal, deleteTriviaItem}) => {
     let { question, answer, category, difficulty } = modal.data;
     return (
       <div className="modal">
@@ -31,7 +31,7 @@ const Details = ({modal, closeModal, deleteTrivia}) => {
           </div>
           <button className="delete-item-btn" onClick={() => {    
             closeModal();
-            deleteTrivia(modal.data);}}>
+            deleteTriviaItem(modal.data);}}>
             Delete
           </button>
         </div>

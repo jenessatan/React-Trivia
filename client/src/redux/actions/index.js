@@ -15,7 +15,7 @@ const addTrivia = trivia => {
   }
 }
 
-export const deleteTrivia = trivia => {
+const deleteTrivia = trivia => {
   return {
     type: DELETE_ITEM,
     _id: trivia._id
@@ -50,7 +50,7 @@ export const closeModal = () => {
 
 export const getAllTrivia = () => {
   return dispatch => {
-    API.get('/trivia')
+    API.get('/trivia/api/')
       .then(res => {
         dispatch(loadTrivia(res.data.trivia))
       })
@@ -62,12 +62,24 @@ export const getAllTrivia = () => {
 
 export const createTriviaItem = (trivia) => {
   return dispatch => {
-    API.post('/trivia', trivia)
+    API.post('/trivia/api/', trivia)
     .then(res => {
       trivia._id = res.data.id;
       dispatch(addTrivia(trivia));
     }).catch(err => {
       console.log(err);
     }) 
+  }
+}
+
+export const deleteTriviaItem = (trivia) => {
+  return dispatch => {
+    API.delete(`/trivia/api/${trivia._id}`)
+    .then(res => {
+      console.log(res);
+      dispatch(deleteTrivia(trivia));
+    }).catch(err => {
+      console.log(err);
+    })
   }
 }

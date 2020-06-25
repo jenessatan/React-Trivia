@@ -5,7 +5,7 @@ var router = express.Router();
 
 
 /* GET users listing. */
-router.get('/', (req, res, next) => {
+router.get('/api/', (req, res, next) => {
   // res.send('questions and answers');
   TriviaItem.find()
     .then((triviaItems) => {
@@ -22,7 +22,7 @@ router.get('/', (req, res, next) => {
     })
 });
 
-router.get('/:id', (req, res, next) => {
+router.get('/api/:id', (req, res, next) => {
 TriviaItem.findById(req.params.id)
   .then((triviaItem) => {
     res.status(200).json({
@@ -38,7 +38,7 @@ TriviaItem.findById(req.params.id)
   })
 })
 
-router.delete('/:id', (req, res, next) => {
+router.delete('/api/:id', (req, res, next) => {
   TriviaItem.findByIdAndDelete(req.params.id)
     .then((removedTriviaItem) => {
       res.status(200).json({
@@ -54,7 +54,7 @@ router.delete('/:id', (req, res, next) => {
     })
 })
 
-router.post('/', (req, res, next) => {
+router.post('/api/', (req, res, next) => {
   let itemInput = req.body;
   let newItem = new TriviaItem(itemInput);
 

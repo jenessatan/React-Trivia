@@ -2,7 +2,7 @@ import {ADD_ITEM, DELETE_ITEM, DELETE_ALL_ITEMS, LOAD_ALL_ITEMS} from '../../con
 
 const trivia = (state = [], action) => {
   if (action.type === ADD_ITEM) {
-    return [...state, { ...action.trivia/* , ..._id */ }];
+    return [...state, { ...action.trivia}];
   } 
   
   if (action.type === DELETE_ITEM) {
