@@ -29,9 +29,10 @@ const Details = ({modal, closeModal, deleteTriviaItem}) => {
               </div>
             </div>
           </div>
-          <button className="delete-item-btn" onClick={() => {    
-            closeModal();
-            deleteTriviaItem(modal.data);}}>
+          <button className="delete-item-btn" onClick={() => {  
+            if (window.confirm('Are you sure you want to delete this item?'))  {
+              closeModal();
+              deleteTriviaItem(modal.data);}}}>
             Delete
           </button>
         </div>

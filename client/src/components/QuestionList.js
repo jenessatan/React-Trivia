@@ -12,6 +12,12 @@ class QuestionList extends React.Component {
     this.props.getAllTrivia();
   }
 
+  confirmDeleteAll = e => {
+    if(window.confirm('Are you sure you want to delete all items?')) {
+      this.props.deleteAllTriviaItems();
+    }
+  }
+
   render() {
     let {trivia, deleteAllTriviaItems} = this.props;
         return (
@@ -19,7 +25,7 @@ class QuestionList extends React.Component {
             <h2>Question List</h2>
             <div className='list-options'>
               <Filter />
-            <button className='delete-all-btn' onClick={deleteAllTriviaItems}>Delete All</button>
+            <button className='delete-all-btn' onClick={this.confirmDeleteAll}>Delete All</button>
             </div>
               { trivia.length === 0 ? <p>There are no available questions</p> :
               trivia.map((val)=>
