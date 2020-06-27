@@ -5,3 +5,5 @@ export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 export const OPEN_MODAL = 'OPEN_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
 export const LOAD_ALL_ITEMS = 'LOAD_ALL_ITEMS';
+export const START_LOADING = 'START_LOADING';
+export const ITEM_ERROR = 'ITEM_ERROR';

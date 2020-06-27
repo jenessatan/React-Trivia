@@ -1,5 +1,18 @@
-import {ADD_ITEM, DELETE_ITEM, DELETE_ALL_ITEMS, SET_VISIBILITY_FILTER, OPEN_MODAL, CLOSE_MODAL, LOAD_ALL_ITEMS} from '../../constants/ActionTypes';
+import {ADD_ITEM, DELETE_ITEM, DELETE_ALL_ITEMS, SET_VISIBILITY_FILTER, OPEN_MODAL, CLOSE_MODAL, LOAD_ALL_ITEMS, START_LOADING, ITEM_ERROR} from '../../constants/ActionTypes';
 import API from '../api';
+
+const setLoading = () => {
+  return {
+    type: START_LOADING
+  }
+}
+
+const itemError = (error) => {
+  return {
+    type: ITEM_ERROR,
+    error: error
+  }
+}
 
 const loadTrivia = (triviaItems) => {
   return {
@@ -50,6 +63,7 @@ export const closeModal = () => {
 
 export const getAllTrivia = () => {
   return dispatch => {
+    dispatch(setLoading());
     API.get('/trivia/api/')
       .then(res => {
         dispatch(loadTrivia(res.data.trivia))
@@ -62,6 +76,7 @@ export const getAllTrivia = () => {
 
 export const createTriviaItem = (trivia) => {
   return dispatch => {
+    dispatch(setLoading());
     API.post('/trivia/api/', trivia)
     .then(res => {
       trivia._id = res.data.id;
@@ -74,6 +89,7 @@ export const createTriviaItem = (trivia) => {
 
 export const deleteTriviaItem = (trivia) => {
   return dispatch => {
+    dispatch(setLoading());
     API.delete(`/trivia/api/${trivia._id}`)
     .then(res => {
       dispatch(deleteTrivia(trivia));
@@ -85,6 +101,7 @@ export const deleteTriviaItem = (trivia) => {
 
 export const deleteAllTriviaItems = () => {
   return dispatch => {
+    dispatch(setLoading());
     API.delete('/trivia/api/')
       .then(res => {
         console.log(res.data.trivia.deletedCount);

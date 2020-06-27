@@ -5,7 +5,6 @@ import '../styles/QuestionList.css';
 import { connect } from "react-redux";
 import { VisibilityFilters } from "../constants/Filters";
 import { getAllTrivia, deleteAllTriviaItems  } from "../redux/actions";
-// import { deleteAllTrivia } from "../redux/actions";
 
 class QuestionList extends React.Component {
   componentDidMount() {
@@ -19,7 +18,7 @@ class QuestionList extends React.Component {
   }
 
   render() {
-    let {trivia, deleteAllTriviaItems} = this.props;
+    let {trivia} = this.props;
         return (
           <div className='question-list'>
             <h2>Question List</h2>
@@ -50,7 +49,7 @@ const getVisibleTrivia = (items, filter) => {
 };
 
 const mapStateToProps = (state) => ({
-  trivia: getVisibleTrivia(state.trivia, state.visibility),
+  trivia: getVisibleTrivia(state.trivia.data, state.visibility),
 });
 
 
