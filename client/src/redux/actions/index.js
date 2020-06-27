@@ -10,7 +10,7 @@ const setLoading = () => {
 const itemError = (error) => {
   return {
     type: ITEM_ERROR,
-    error: error
+    error: error || 'Something went wrong'
   }
 }
 

@@ -11,16 +11,17 @@ Task: Integrate Frontend and Backend with Node and Express
 - ~handle async calls (if done in action, use redux-thunk)~
 - something cool and extra, for example:
   - some kind of new component
-  - a spinner while making a request (until it finishes)
+  - ~a spinner while making a request (until it finishes)~
   - some more advanced styling (animations or transition)
   - as listed above, editing a message
 
 TODO:
-- handle error and loading
-- confirmation dialog on delete
+- handle error
+- ~handle loading~
+- ~confirmation dialog on delete~
 - snack bar for successful post
 - message editing
-- loading spinner
+- ~loading spinner~
 
 Resources used:
 - [Redux docs for configuring store](https://redux.js.org/recipes/configuring-your-store)
