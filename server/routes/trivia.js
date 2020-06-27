@@ -15,10 +15,9 @@ router.get('/api/', (req, res, next) => {
       })
     })
     .catch(err => {
-      res.status(404).json({
-        status: 'fail',
-        message: err
-      })
+      res.status(500).json({
+        message: "Error code 500: Failed to process request",
+      });
     })
 });
 
@@ -26,16 +25,22 @@ router.get('/api/', (req, res, next) => {
 router.get('/api/:id', (req, res, next) => {
   TriviaItem.findById(req.params.id)
     .then((triviaItem) => {
-      res.status(200).json({
-        status: 'success',
-        trivia: triviaItem
-      })
+      if(!triviaItem) {
+        res.status(404).json({
+          message: 'item not found'
+        })
+      } else {
+        res.status(200).json({
+          status: 'success',
+          trivia: triviaItem
+        })
+      }
     })
     .catch(err => {
-      res.status(404).json({
-        status: 'fail',
-        message: err
-      })
+      res.status(500).json({
+        message: "Error code 500: Failed to process request",
+        err: err
+      });
     })
 })
 
@@ -49,10 +54,10 @@ router.delete('/api/:id', (req, res, next) => {
       })
     })
     .catch(err => {
-      res.status(404).json({
-        status:'fail',
-        message: err
-      })
+      res.status(500).json({
+        message: "Error code 500: Failed to process request",
+        err: err
+      });
     })
 })
 
@@ -69,10 +74,10 @@ router.post('/api/', (req, res, next) => {
       })
     })
     .catch(err => {
-      res.status(404).json({
-        status:'fail',
-        message: err
-      })
+      res.status(500).json({
+        message: "Error code 500: Failed to process request",
+        err: err
+      });
     })
 })
 
@@ -86,10 +91,10 @@ router.delete('/api/', (req,res, next) => {
       })
     })
     .catch(err => {
-      res.status(404).json({
-        status:'fail',
-        message: err
-      })
+      res.status(500).json({
+        message: "Error code 500: Failed to process request",
+        err: err
+      });
     })
 })
 
