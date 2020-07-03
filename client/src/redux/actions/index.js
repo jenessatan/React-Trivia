@@ -76,7 +76,8 @@ export const getAllTrivia = () => {
         dispatch(loadTrivia(res.data.trivia))
       })
       .catch(err => {
-        console.log(err)
+        console.log(err);
+        // dispatch(itemError(err));
       })
   }
 }
@@ -128,5 +129,11 @@ export const updateTriviaItem = (trivia) => {
     }).catch(err => {
       console.log(err);
     })
+  }
+}
+
+export const hideSnackbar = () => {
+  return {
+    type: 'HIDE_SNACKBAR'
   }
 }

@@ -50,5 +50,9 @@ export default {
       answer:'',
       category:''
     }
+  },
+  snackbar: {
+    isOpen: false,
+    data: ""
   }
 }

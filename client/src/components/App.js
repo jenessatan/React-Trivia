@@ -4,6 +4,7 @@ import QuestionList from './QuestionList.js';
 import InputForm from './InputForm';
 import LoadingSpinner from './LoadingSpinner';
 import DetailsContainer from '../containers/DetailsContainer'
+import Snackbar from './Snackbar';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <LoadingSpinner />
       <InputForm/>
       <QuestionList />
+      <Snackbar />
     </div>
   );
 }
