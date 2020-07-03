@@ -1,4 +1,4 @@
-import {ADD_ITEM, DELETE_ITEM, DELETE_ALL_ITEMS, SET_VISIBILITY_FILTER, OPEN_MODAL, CLOSE_MODAL, LOAD_ALL_ITEMS, START_LOADING, ITEM_ERROR} from '../../constants/ActionTypes';
+import {ADD_ITEM, DELETE_ITEM, DELETE_ALL_ITEMS, SET_VISIBILITY_FILTER, OPEN_MODAL, CLOSE_MODAL, LOAD_ALL_ITEMS, START_LOADING, ITEM_ERROR, UPDATE_ITEM} from '../../constants/ActionTypes';
 import API from '../api';
 
 const setLoading = () => {
@@ -38,6 +38,13 @@ const deleteTrivia = trivia => {
 const deleteAllTrivia = () => {
   return {
     type: DELETE_ALL_ITEMS
+  }
+}
+
+const updateTrivia = trivia => {
+  return {
+    type: UPDATE_ITEM,
+    trivia
   }
 }
 
@@ -109,5 +116,17 @@ export const deleteAllTriviaItems = () => {
       }).catch(err => {
         console.log(err);
       })
+  }
+}
+
+export const updateTriviaItem = (trivia) => {
+  return dispatch => {
+    dispatch(setLoading());
+    API.put(`/trivia/api/${trivia._id}`, trivia)
+    .then(res => {
+      dispatch(updateTrivia(trivia))
+    }).catch(err => {
+      console.log(err);
+    })
   }
 }

@@ -98,5 +98,23 @@ router.delete('/api/', (req,res, next) => {
     })
 })
 
+/* UPDATE trivia item by ID. */
+router.put('/api/:id', (req, res, next) => {
+  TriviaItem.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then((result) => {
+      console.log(result);
+      res.status(200).json({
+        status: 'success',
+        trivia: result
+      })
+    })
+    .catch(err => {
+      res.status(500).json({
+        message: "Error code 500: Failed to process request",
+        err: err
+      });
+    })
+})
+
 
 export default router;

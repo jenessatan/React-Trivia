@@ -1,4 +1,4 @@
-import {ADD_ITEM, DELETE_ITEM, DELETE_ALL_ITEMS, LOAD_ALL_ITEMS, START_LOADING, ITEM_ERROR} from '../../constants/ActionTypes';
+import {ADD_ITEM, DELETE_ITEM, DELETE_ALL_ITEMS, LOAD_ALL_ITEMS, START_LOADING, ITEM_ERROR, UPDATE_ITEM} from '../../constants/ActionTypes';
 
 const initialState = {
   loading: false,
@@ -47,6 +47,15 @@ const trivia = (state = initialState, action) => {
       ...state,
       loading: false,
       data: action.trivia
+    }
+  }
+
+  if(action.type === UPDATE_ITEM) {
+    let newDataState = state.data.map((item) => item._id === action.trivia._id? action.trivia : item);
+    return {
+      ...state,
+      loading: false,
+      data: newDataState
     }
   }
 
