@@ -1,5 +1,4 @@
 import React from 'react';
-import DetailsContainer from '../containers/DetailsContainer'
 
 class QuestionItem extends React.Component {
   constructor() {
@@ -42,7 +41,6 @@ class QuestionItem extends React.Component {
       <div className={(this.state.visible ? 'showing' : 'hiding')+' answer-div'}>
         <p className='answer'>{answer}</p>
       </div>
-      {this.props.modal.isOpen && <DetailsContainer />}
       </div>
     )
   }
