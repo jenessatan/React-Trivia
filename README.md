@@ -13,14 +13,14 @@ Task: Integrate Frontend and Backend with Node and Express
   - some kind of new component
   - ~a spinner while making a request (until it finishes)~
   - some more advanced styling (animations or transition)
-  - as listed above, editing a message
+  - ~as listed above, editing a message~
 
 TODO:
 - handle error
 - ~handle loading~
 - ~confirmation dialog on delete~
 - snack bar for successful post
-- message editing
+- ~message editing~
 - ~loading spinner~
 
 Resources used:
