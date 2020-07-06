@@ -12,7 +12,7 @@ const Snackbar = (props) => {
   })
 
   return (
-    <div className={snackbar.isOpen ? "show" : ""} id="snackbar" >
+    <div className={snackbar.isOpen ? snackbar.type==="success"? "show success" : "show error" : ""} id="snackbar" >
       <p>{snackbar.data}</p>
     </div>
   )

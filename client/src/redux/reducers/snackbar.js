@@ -14,6 +14,7 @@ const snackbar = (state = initialState.snackbar, action) => {
   if(action.type === ADD_ITEM) {
     return {
       isOpen: true,
+      type: 'success',
       data: "Successfully added new item"
     }
   }
@@ -21,6 +22,7 @@ const snackbar = (state = initialState.snackbar, action) => {
   if(action.type === DELETE_ITEM) {
     return {
       isOpen: true,
+      type: 'success',
       data: "Successfully deleted item"
     }
   }
@@ -28,6 +30,7 @@ const snackbar = (state = initialState.snackbar, action) => {
   if(action.type === UPDATE_ITEM) {
     return {
       isOpen: true,
+      type: 'success',
       data: "Successfully updated item"
     }
   }
@@ -35,6 +38,7 @@ const snackbar = (state = initialState.snackbar, action) => {
   if(action.type === ITEM_ERROR) {
     return {
       isOpen: true,
+      type: 'error',
       data: action.error
     }
   }

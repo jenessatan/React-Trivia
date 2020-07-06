@@ -71,13 +71,13 @@ export const closeModal = () => {
 export const getAllTrivia = () => {
   return dispatch => {
     dispatch(setLoading());
-    API.get('/trivia/api/')
+    API.get('/api/trivia')
       .then(res => {
         dispatch(loadTrivia(res.data.trivia))
       })
       .catch(err => {
-        console.log(err);
-        // dispatch(itemError(err));
+        // console.log(err)
+        dispatch(itemError());
       })
   }
 }
@@ -85,12 +85,13 @@ export const getAllTrivia = () => {
 export const createTriviaItem = (trivia) => {
   return dispatch => {
     dispatch(setLoading());
-    API.post('/trivia/api/', trivia)
+    API.post('/api/trivia', trivia)
     .then(res => {
-      trivia._id = res.data.id;
-      dispatch(addTrivia(trivia));
+        trivia._id = res.data.id;
+        dispatch(addTrivia(trivia));
     }).catch(err => {
-      console.log(err);
+      // console.log(err.message);
+      dispatch(itemError("Unable to add duplicate questions"));
     }) 
   }
 }
@@ -98,11 +99,12 @@ export const createTriviaItem = (trivia) => {
 export const deleteTriviaItem = (trivia) => {
   return dispatch => {
     dispatch(setLoading());
-    API.delete(`/trivia/api/${trivia._id}`)
+    API.delete(`/api/trivia/${trivia._id}`)
     .then(res => {
       dispatch(deleteTrivia(trivia));
     }).catch(err => {
-      console.log(err);
+      // console.log(err);
+      dispatch(itemError());
     })
   }
 }
@@ -110,12 +112,13 @@ export const deleteTriviaItem = (trivia) => {
 export const deleteAllTriviaItems = () => {
   return dispatch => {
     dispatch(setLoading());
-    API.delete('/trivia/api/')
+    API.delete('/api/trivia')
       .then(res => {
         console.log(res.data.trivia.deletedCount);
         dispatch(deleteAllTrivia());
       }).catch(err => {
-        console.log(err);
+        // console.log(err);
+        dispatch(itemError());
       })
   }
 }
@@ -123,11 +126,12 @@ export const deleteAllTriviaItems = () => {
 export const updateTriviaItem = (trivia) => {
   return dispatch => {
     dispatch(setLoading());
-    API.put(`/trivia/api/${trivia._id}`, trivia)
+    API.put(`/api/trivia/${trivia._id}`, trivia)
     .then(res => {
       dispatch(updateTrivia(trivia))
     }).catch(err => {
-      console.log(err);
+      // console.log(err);
+      dispatch(itemError("Unable to update this item"));
     })
   }
 }

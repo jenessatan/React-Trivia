@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 const triviaItemSchema = new mongoose.Schema({
   question: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   answer: {
     type: String,

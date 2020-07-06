@@ -5,7 +5,7 @@ var router = express.Router();
 
 
 /* GET all trivia items. */
-router.get('/api/', (req, res, next) => {
+router.get('/', (req, res, next) => {
   // res.send('questions and answers');
   TriviaItem.find()
     .then((triviaItems) => {
@@ -22,7 +22,7 @@ router.get('/api/', (req, res, next) => {
 });
 
 /* GET trivia item by ID. */
-router.get('/api/:id', (req, res, next) => {
+router.get('/:id', (req, res, next) => {
   TriviaItem.findById(req.params.id)
     .then((triviaItem) => {
       if(!triviaItem) {
@@ -45,7 +45,7 @@ router.get('/api/:id', (req, res, next) => {
 })
 
 /* DELETE trivia item by ID. */
-router.delete('/api/:id', (req, res, next) => {
+router.delete('/:id', (req, res, next) => {
   TriviaItem.findByIdAndDelete(req.params.id)
     .then((removedTriviaItem) => {
       res.status(200).json({
@@ -62,7 +62,7 @@ router.delete('/api/:id', (req, res, next) => {
 })
 
 /* POST new trivia item. */
-router.post('/api/', (req, res, next) => {
+router.post('/', (req, res, next) => {
   let itemInput = req.body;
   let newItem = new TriviaItem(itemInput);
 
@@ -82,7 +82,7 @@ router.post('/api/', (req, res, next) => {
 })
 
 /* DELETE all trivia items. */
-router.delete('/api/', (req,res, next) => {
+router.delete('/', (req,res, next) => {
   TriviaItem.deleteMany()
     .then((result) => {
       res.status(200).json({
@@ -99,7 +99,7 @@ router.delete('/api/', (req,res, next) => {
 })
 
 /* UPDATE trivia item by ID. */
-router.put('/api/:id', (req, res, next) => {
+router.put('/:id', (req, res, next) => {
   TriviaItem.findByIdAndUpdate(req.params.id, req.body, {new: true})
     .then((result) => {
       console.log(result);

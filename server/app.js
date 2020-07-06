@@ -24,7 +24,8 @@ mongoose
   .connect(DB, {
     useNewUrlParser: true,
     useCreateIndex: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false 
   })
   .then(() => debug('DB connnection successful!'));
 
@@ -41,7 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 // app.use('/users', usersRouter);
-app.use('/trivia', triviaRouter);
+app.use('/api/trivia', triviaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
