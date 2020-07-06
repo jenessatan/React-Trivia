@@ -53,6 +53,7 @@ export default {
   },
   snackbar: {
     isOpen: false,
+    type: "",
     data: ""
   }
 }

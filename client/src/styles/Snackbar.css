@@ -12,6 +12,8 @@
   z-index: 1; 
   left: 50%; 
   bottom: 30px;
+  display: "flex";
+  justify-content: space-between;
 }
 
 #snackbar.show {
@@ -26,6 +28,11 @@
 
 #snackbar.error {
   background-color: #f44336;
+}
+
+#snackbar p {
+  display: inline-block;
+  padding: 0 12px
 }
 
 /* Animations to fade the snackbar in and out */
