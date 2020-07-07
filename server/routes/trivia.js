@@ -12,8 +12,9 @@ router.get('/', (req, res, next) => {
       res.status(200).json(triviaItems)
     })
     .catch(err => {
-      res.status(500).json({
-        message: "Error code 500: Failed to process request",
+      res.status(400).json({
+        message: "Bad Request",
+        err: err
       });
     })
 });
@@ -31,8 +32,8 @@ router.get('/:id', (req, res, next) => {
       }
     })
     .catch(err => {
-      res.status(500).json({
-        message: "Error code 500: Failed to process request",
+      res.status(400).json({
+        message: "Bad Request",
         err: err
       });
     })
@@ -45,8 +46,8 @@ router.delete('/:id', (req, res, next) => {
       res.status(200).json(removedTriviaItem)
     })
     .catch(err => {
-      res.status(500).json({
-        message: "Error code 500: Failed to process request",
+      res.status(400).json({
+        message: "Bad Request",
         err: err
       });
     })
@@ -62,8 +63,8 @@ router.post('/', (req, res, next) => {
       res.status(201).json(result)
     })
     .catch(err => {
-      res.status(500).json({
-        message: "Error code 500: Failed to process request",
+      res.status(400).json({
+        message: "Bad Request",
         err: err
       });
     })
@@ -76,8 +77,8 @@ router.delete('/', (req,res, next) => {
       res.status(200).json(result)
     })
     .catch(err => {
-      res.status(500).json({
-        message: "Error code 500: Failed to process request",
+      res.status(400).json({
+        message: "Bad Request",
         err: err
       });
     })
@@ -91,8 +92,8 @@ router.put('/:id', (req, res, next) => {
       res.status(200).json(result)
     })
     .catch(err => {
-      res.status(500).json({
-        message: "Error code 500: Failed to process request",
+      res.status(400).json({
+        message: "Bad Request",
         err: err
       });
     })
