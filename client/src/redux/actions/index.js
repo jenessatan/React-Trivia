@@ -73,7 +73,7 @@ export const getAllTrivia = () => {
     dispatch(setLoading());
     API.get('/api/trivia')
       .then(res => {
-        dispatch(loadTrivia(res.data.trivia))
+        dispatch(loadTrivia(res.data))
       })
       .catch(err => {
         // console.log(err)
@@ -87,8 +87,7 @@ export const createTriviaItem = (trivia) => {
     dispatch(setLoading());
     API.post('/api/trivia', trivia)
     .then(res => {
-        trivia._id = res.data.id;
-        dispatch(addTrivia(trivia));
+        dispatch(addTrivia(res.data));
     }).catch(err => {
       // console.log(err.message);
       dispatch(itemError("Unable to add duplicate questions"));
@@ -101,7 +100,7 @@ export const deleteTriviaItem = (trivia) => {
     dispatch(setLoading());
     API.delete(`/api/trivia/${trivia._id}`)
     .then(res => {
-      dispatch(deleteTrivia(trivia));
+      dispatch(deleteTrivia(res));
     }).catch(err => {
       // console.log(err);
       dispatch(itemError());
@@ -128,7 +127,7 @@ export const updateTriviaItem = (trivia) => {
     dispatch(setLoading());
     API.put(`/api/trivia/${trivia._id}`, trivia)
     .then(res => {
-      dispatch(updateTrivia(trivia))
+      dispatch(updateTrivia(res.data))
     }).catch(err => {
       // console.log(err);
       dispatch(itemError("Unable to update this item"));

@@ -9,10 +9,7 @@ router.get('/', (req, res, next) => {
   // res.send('questions and answers');
   TriviaItem.find()
     .then((triviaItems) => {
-      res.status(200).json({
-        status: 'success',
-        trivia: triviaItems
-      })
+      res.status(200).json(triviaItems)
     })
     .catch(err => {
       res.status(500).json({
@@ -30,10 +27,7 @@ router.get('/:id', (req, res, next) => {
           message: 'item not found'
         })
       } else {
-        res.status(200).json({
-          status: 'success',
-          trivia: triviaItem
-        })
+        res.status(200).json(triviaItem)
       }
     })
     .catch(err => {
@@ -48,10 +42,7 @@ router.get('/:id', (req, res, next) => {
 router.delete('/:id', (req, res, next) => {
   TriviaItem.findByIdAndDelete(req.params.id)
     .then((removedTriviaItem) => {
-      res.status(200).json({
-        status: 'success',
-        trivia: removedTriviaItem
-      })
+      res.status(200).json(removedTriviaItem)
     })
     .catch(err => {
       res.status(500).json({
@@ -68,10 +59,7 @@ router.post('/', (req, res, next) => {
 
   newItem.save()
     .then((result) => {
-      res.status(201).json({
-        status: 'success',
-        id: result._id
-      })
+      res.status(201).json(result)
     })
     .catch(err => {
       res.status(500).json({
@@ -85,10 +73,7 @@ router.post('/', (req, res, next) => {
 router.delete('/', (req,res, next) => {
   TriviaItem.deleteMany()
     .then((result) => {
-      res.status(200).json({
-        status: 'success',
-        trivia: result
-      })
+      res.status(200).json(result)
     })
     .catch(err => {
       res.status(500).json({
@@ -103,10 +88,7 @@ router.put('/:id', (req, res, next) => {
   TriviaItem.findByIdAndUpdate(req.params.id, req.body, {new: true})
     .then((result) => {
       console.log(result);
-      res.status(200).json({
-        status: 'success',
-        trivia: result
-      })
+      res.status(200).json(result)
     })
     .catch(err => {
       res.status(500).json({
