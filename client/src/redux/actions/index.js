@@ -100,7 +100,7 @@ export const deleteTriviaItem = (trivia) => {
     dispatch(setLoading());
     API.delete(`/api/trivia/${trivia._id}`)
     .then(res => {
-      dispatch(deleteTrivia(res));
+      dispatch(deleteTrivia(res.data));
     }).catch(err => {
       // console.log(err);
       dispatch(itemError());
