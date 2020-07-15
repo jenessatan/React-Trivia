@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose =require("mongoose");
 
 const triviaItemSchema = new mongoose.Schema({
   question: {
@@ -22,4 +22,4 @@ const triviaItemSchema = new mongoose.Schema({
 
 const TriviaItem = mongoose.model('TriviaItem', triviaItemSchema);
 
-export default TriviaItem;
+module.exports = TriviaItem;

@@ -1,21 +1,21 @@
-import createError from 'http-errors';
-import cors from 'cors';
-import mongoose from 'mongoose';
-import 'dotenv/config';
+const createError = require('http-errors');
+const cors = require('cors');
+const mongoose = require('mongoose');
+require('dotenv/config');
 
-import express from 'express';
-import path from 'path';
-import cookieParser from 'cookie-parser';
-import logger from 'morgan';
-import indexRouter from './routes/index';
-import usersRouter from './routes/users';
-import triviaRouter from './routes/trivia';
-import debugLib from 'debug';
+const express = require('express');
+const path =require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const triviaRouter = require('./routes/trivia');
+const debugLib = require('debug');
 const debug = debugLib('server:server');
 
 var app = express();
 
-const DB = process.env.DATABASE
+const DB = process.env.DATABASE;
 
 mongoose
   .connect(DB, {
@@ -57,4 +57,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-export default app;
+module.exports = app;

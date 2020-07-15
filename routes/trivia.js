@@ -1,6 +1,6 @@
-import express from 'express';
-import {uuid} from 'uuidv4';
-import TriviaItem from '../models/triviaItems';
+const express = require('express');
+const {uuid} = require('uuidv4');
+const TriviaItem = require('../models/triviaItems');
 var router = express.Router();
 
 
@@ -100,4 +100,4 @@ router.put('/:id', (req, res, next) => {
 })
 
 
-export default router;
+module.exports = router;
