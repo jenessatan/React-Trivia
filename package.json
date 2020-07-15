@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "server": "SET \"DEBUG=server:*\"&& nodemon --exec babel-node ./bin/www",
     "client": "cd client && npm start",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && yarn && yarn run build"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
