@@ -1,5 +1,6 @@
 import {ADD_ITEM, DELETE_ITEM, DELETE_ALL_ITEMS, SET_VISIBILITY_FILTER, OPEN_MODAL, CLOSE_MODAL, LOAD_ALL_ITEMS, START_LOADING, ITEM_ERROR, UPDATE_ITEM} from '../../constants/ActionTypes';
 import API from '../api';
+import axios from "axios";
 
 const setLoading = () => {
   return {
@@ -71,7 +72,7 @@ export const closeModal = () => {
 export const getAllTrivia = () => {
   return dispatch => {
     dispatch(setLoading());
-    API.get('/api/trivia')
+    axios.get('/api/trivia')
       .then(res => {
         dispatch(loadTrivia(res.data))
       })
@@ -85,7 +86,7 @@ export const getAllTrivia = () => {
 export const createTriviaItem = (trivia) => {
   return dispatch => {
     dispatch(setLoading());
-    API.post('/api/trivia', trivia)
+    axios.post('/api/trivia', trivia)
     .then(res => {
         dispatch(addTrivia(res.data));
     }).catch(err => {
@@ -98,7 +99,7 @@ export const createTriviaItem = (trivia) => {
 export const deleteTriviaItem = (trivia) => {
   return dispatch => {
     dispatch(setLoading());
-    API.delete(`/api/trivia/${trivia._id}`)
+    axios.delete(`/api/trivia/${trivia._id}`)
     .then(res => {
       dispatch(deleteTrivia(res.data));
     }).catch(err => {
@@ -111,7 +112,7 @@ export const deleteTriviaItem = (trivia) => {
 export const deleteAllTriviaItems = () => {
   return dispatch => {
     dispatch(setLoading());
-    API.delete('/api/trivia')
+    axios.delete('/api/trivia')
       .then(res => {
         console.log(res.data.trivia.deletedCount);
         dispatch(deleteAllTrivia());
@@ -125,7 +126,7 @@ export const deleteAllTriviaItems = () => {
 export const updateTriviaItem = (trivia) => {
   return dispatch => {
     dispatch(setLoading());
-    API.put(`/api/trivia/${trivia._id}`, trivia)
+    axios.put(`/api/trivia/${trivia._id}`, trivia)
     .then(res => {
       dispatch(updateTrivia(res.data))
     }).catch(err => {
