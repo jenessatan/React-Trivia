@@ -7,7 +7,7 @@
     "server": "SET \"DEBUG=server:*\"&& nodemon --exec babel-node ./bin/www",
     "client": "cd client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
+    "heroku-postbuild": "cd client && npm install & npm run build"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
