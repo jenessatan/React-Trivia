@@ -1,5 +1,3 @@
-# CPSC 436I - Assignment 5
+# React Trivia
 
-Task: deploy project to Heroku
-- after deployment, ensure app can be accessed by a different computer and everything still works
-- at minimum, maintain functionality based on requirements from assignment 4
+A small React-based project for displaying, creating and deleting food & Disney trivia questions stored in a MongoDB database. 
