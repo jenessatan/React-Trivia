@@ -1,0 +1,89 @@
+form {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em 0;
+    text-align: left;
+}
+
+input[type=search], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form label {
+    font-size: 12px;
+}
+
+.form-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.75em;
+}
+
+.btn {
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 0.65em;
+    padding: 0.5em 0.9em;
+    outline: none;
+    margin: 0 0.5em;
+}
+
+#btn-save {
+    background-color: #74ad5a;
+    border: 0.06em solid #3b6e22;
+    text-shadow: 0em 0.06em 0em #92b879;
+}
+
+#btn-save:hover {
+    background-color: #68a54b;
+}
+
+#btn-clear {
+    background-color: #bd5f5f;
+    border: 0.06em solid #6e2222;
+    text-shadow: 0em 0.06em 0em #b87979;
+}
+
+#btn-clear:hover {
+    background-color: #a54b4b;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between
+}
+
+.form-text {
+    width: 75%
+}
+
+.form-category {
+    width: 25%;
+    padding: 0 8px;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+.star {
+    cursor: pointer;
+    transition: color 200ms;
+}
+
+.form-rating {
+    width: 25%;
+    padding: 0 8px;
+}
+
+.rating {
+    margin: 8px;
+    padding: 5px 0px;
+}
